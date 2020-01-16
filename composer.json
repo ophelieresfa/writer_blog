@@ -1,20 +1,13 @@
 {
   "name": "ophelieresfa/writer_blog",
   "version": "0.1.0",
-  "type": "Project",
-  "description": "Creating the blog for writer",
-  "keywords": [
-    "blog",
-    "writer"
-  ],
-  "homepage": "http://writer-blog.ophers.fr",
+  "description": "Projet 4 for OpenClassrooms - Creating blog for writer",
   "license": "MIT",
   "authors": [
     {
       "name": "Ophélie Resfa",
       "email": "resfa.ophelie@yahoo.fr",
-      "homepage": "https://portfolio.ophers.fr",
-      "role": "Lead Developer"
+      "homepage": "http://portfolio.ophers.fr"
     }
   ],
   "autoload": {
@@ -23,10 +16,8 @@
     }
   },
   "require": {
-    "php": "7.2.5",
-    "twig/twig": "^3.0.1"
-  },
-  "require-dev": {
+    "php": "7.3.9",
+    "twig/twig": "^3.0.1",
     "tracy/tracy": "^2.7.2"
   }
 }
