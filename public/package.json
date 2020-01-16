@@ -1,0 +1,14 @@
+{
+  "name": "writer_blog",
+  "description": "Projet 4 for OpenClassrooms - Creating blog for writer",
+  "license": "MIT",
+  "repository": "github:ophelieresfa/writer_blog",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.0"
+  },
+  "author": {
+    "name": "Ophélie Resfa",
+    "email": "resfa.ophelie@yahoo.fr",
+    "url": "http://portfolio.ophers.fr"
+  }
+}
