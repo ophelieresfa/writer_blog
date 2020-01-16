@@ -1,0 +1,32 @@
+{
+  "name": "ophelieresfa/writer_blog",
+  "version": "0.1.0",
+  "type": "Project",
+  "description": "Creating the blog for writer",
+  "keywords": [
+    "blog",
+    "writer"
+  ],
+  "homepage": "http://writer-blog.ophers.fr",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ophélie Resfa",
+      "email": "resfa.ophelie@yahoo.fr",
+      "homepage": "https://portfolio.ophers.fr",
+      "role": "Lead Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "require": {
+    "php": "7.2.5",
+    "twig/twig": "^3.0.1"
+  },
+  "require-dev": {
+    "tracy/tracy": "^2.7.2"
+  }
+}
