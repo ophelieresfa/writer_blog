@@ -18,6 +18,8 @@
   "require": {
     "php": "7.3.9",
     "twig/twig": "^3.0.1",
-    "tracy/tracy": "^2.7.2"
+    "tracy/tracy": "^2.7.2",
+    "altorouter/altorouter": "^2.0.1",
+    "filp/whoops": "^2.7.1"
   }
 }
