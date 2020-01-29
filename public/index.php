@@ -6,5 +6,5 @@ $router = new AltoRouter();
 
 // map homepage
 $router->map( 'GET', '/index', function() {
-    require __DIR__ . '../src/View/index.php';
+    require __DIR__ . '../src/View/home.twig';
 });
