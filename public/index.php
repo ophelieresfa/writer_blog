@@ -1,10 +1,10 @@
 <?php
 
+use App\Router;
+
 require_once '../vendor/autoload.php';
 
-$router = new AltoRouter();
+//Debugger::enable();
 
-// map homepage
-$router->map( 'GET', '/index', function() {
-    require __DIR__ . '../src/View/index.php';
-});
+$router = new Router();
+$router->run();
