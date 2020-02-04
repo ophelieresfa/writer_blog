@@ -2,47 +2,61 @@
 
 namespace App;
 
-use Exception;
-use App\Controller\BilletController;
-use App\Controller\HomeController;
+class Router
+{
 
-require_once 'Controller/HomeController.php';
-require_once 'Controller/BilletController.php';
+    const PATH_CONTROLLER = 'App\Controller\\';
+    const HOME_CONTROLLER = 'HomeController';
+    const METHOD_CONTROLLER = 'controllerMethod';
 
-class Router {
-
-    private $homeController;
-    private $billetController;
+    private $controller = self::HOME_CONTROLLER;
+    private $method = self::METHOD_CONTROLLER;
 
     public function __construct()
     {
-        $this->homeController = new HomeController();
-        $this->billetController = new BilletController();
+        $this->parseUrl();
+        $this->setController();
+        $this->setMethod();
+    }
+
+    public function parseUrl()
+    {
+        $action = filter_input(INPUT_GET, 'action');
+
+        if (!isset($action)) {
+            $action = 'home';
+        }
+
+        $action = explode('!', $action);
+        $this->controller = $action[0];
+        $this->method = count($action) == 1 ? 'controller' : $action[1];
+    }
+
+    public function setController()
+    {
+        $this->controller = ucfirst(strtolower($this->controller)) . 'Controller';
+        $this->controller = self::PATH_CONTROLLER . $this->controller;
+
+        if (!class_exists($this->controller)) {
+            $this->controller = self::PATH_CONTROLLER . self::HOME_CONTROLLER;
+        }
+
+    }
+
+    public function setMethod()
+    {
+        $this->method = strtolower($this->method) . 'Method';
+
+        if (!method_exists($this->controller, $this->method)) {
+            $this->method = self::METHOD_CONTROLLER;
+        }
     }
 
     public function run()
     {
-        try {
-            if (isset($_GET['access'])) {
-                switch ($_GET['access']) {
-                    case 'billet':
-                        $this->billetController->post();
-                        break;
+        $this->controller = new $this->controller();
+        $response = call_user_func([$this->controller, $this->method]);
 
-                    default:
-                        $this->homeController->home();
-                }
-            }
-            else
-            {
-                $this->homeController->home();
-            }
-        }
-
-        catch (Exception $e)
-        {
-            echo 'Erreur : ' . $e->getMessage();
-        }
+        echo filter_var($response);
     }
-
 }
