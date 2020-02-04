@@ -16,7 +16,7 @@ class MainController
 
     public function redirect(string $page, array $params = [])
     {
-        $params['access'] = $page;
+        $params['action'] = $page;
         header('Location: index.php?' . http_build_query($params));
 
         exit;
