@@ -2,6 +2,10 @@
     color: white;
 }
 
+ul {
+    margin-left: -40px;
+}
+
 body {
     background-color: #ededed;
 }
@@ -12,6 +16,22 @@ header h1 {
     padding: 2rem;
     color: white;
     text-align: center;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: .5rem;
+}
+
+nav li {
+    list-style-type: none;
+    text-align: center;
+    padding: .2rem;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
 }
 
 .introduction {
@@ -26,9 +46,9 @@ header h1 {
 .premier_billet {
     color: #4c4c4c;
     background: white;
-    width: 70%;
+    width: 90%;
+    padding: .5rem 0;
     margin: auto;
-    padding: 2rem;
     border: #4c4c4c solid 2px;
 }
 
