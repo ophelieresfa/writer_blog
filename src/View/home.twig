@@ -12,12 +12,28 @@
 
 <body>
     <header>
-        <h1>Mon blog</h1>
+        <h1>Blog de Jean Forteroche</h1>
     </header>
 
-    <main>
-        <p>Bienvenue sur mon blog</p>
-        <p>Le blog est en construction ... Patience.</p>
-    </main>
+    {% block main %}
+        <main class="white">
+            <section class="introduction">
+                <h1>Bienvenue sur mon blog</h1>
+                <p>Je publierais chapitre par chapitre mon nouveau roman "Billet pour l'Alaska".</p>
+            </section>
+
+            <section class="premier_billet">
+                {% for billet in lastBillet %}
+                    <h2>
+                        {{ billet.titre }}
+                    </h2>
+                    <p>
+                        {{ billet.contenu }}
+                    </p>
+                {% endfor %}
+            </section>
+        </main>
+    {% endblock %}
+
 </body>
 </html>
