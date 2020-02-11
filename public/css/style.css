@@ -1,13 +1,53 @@
+.white {
+    color: white;
+}
+
 body {
-    background-color: #1a1a1a;
+    background-color: #ededed;
 }
 
-h1 {
-    color: beige;
+header h1 {
+    background-color: black;
+    margin: 1rem auto;
+    padding: 2rem;
+    color: white;
     text-align: center;
 }
 
-p {
-    color: #b09a9a;
+.introduction {
+    color: black;
     text-align: center;
+    background-color: white;
+    padding: 1rem;
+    width: 85%;
+    margin: 2rem auto;
 }
+
+.premier_billet {
+    color: #4c4c4c;
+    background: white;
+    width: 70%;
+    margin: auto;
+    padding: 2rem;
+    border: #4c4c4c solid 2px;
+}
+
+.premier_billet h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.premier_billet p {
+    text-align: justify;
+    margin: 3rem;
+}
+
+
+/* Cache les chapitres que l'on ne veut pas afficher */
+
+.premier_billet h2:nth-child(3),
+.premier_billet p:nth-child(4){
+    display: none;
+}
+
+/* */
