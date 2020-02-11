@@ -43,6 +43,14 @@ nav a{
     margin: 2rem auto;
 }
 
+.introduction {
+    font-size: 1rem;
+}
+
+.introduction p {
+    font-size: 1rem;
+}
+
 .premier_billet {
     color: #4c4c4c;
     background: white;
@@ -75,7 +83,7 @@ nav a{
 form {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 60%;
     margin: auto;
 }
 
@@ -83,4 +91,29 @@ form input,
 form textarea {
     padding: .8rem;
     font-size: 1rem;
+}
+
+.admin {
+    color: black;
+    text-align: center;
+    list-style-type: none;
+    font-size: 1.1rem;
+    text-decoration: underline white;
+}
+
+.admin li {
+    margin: 3rem auto;
+    padding: 1rem;
+    background-color: black;
+    color: white;
+    width: 40%;
+}
+
+.admin i {
+    margin-right: 1rem;
+    color: white;
+}
+
+.admin a {
+    text-decoration: none;
 }
