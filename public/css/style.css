@@ -71,3 +71,16 @@ nav a{
 }
 
 /* */
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: auto;
+}
+
+form input,
+form textarea {
+    padding: .8rem;
+    font-size: 1rem;
+}
