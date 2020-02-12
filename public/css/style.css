@@ -92,9 +92,8 @@ nav a{
     text-align: center;
 }
 
-.tous_billets .billets,
-.tous_commentaires .commentaires {
-    color: #4c4c4c;
+.tous_billets .billets {
+    color: black;
     background: white;
     width: 90%;
     padding: 1rem 0 3rem 0;
@@ -102,13 +101,26 @@ nav a{
     border: #4c4c4c solid 2px;
 }
 
+.tous_commentaires .commentaires {
+    color: #222222;
+    background: #a7a7a7;
+    width: 60%;
+    text-align: left;
+    padding: 1rem 0 1rem 0;
+    margin: 2rem auto;
+    border: #4c4c4c solid 2px;
+}
+
+.commentaires p {
+    margin-left: 2rem;
+}
+
 .tous_billets h2 {
     text-align: center;
     text-decoration: underline;
 }
 
-.tous_billets p,
-.tous_commentaires p {
+.tous_billets p {
     text-align: justify;
     margin: 3rem;
 }
@@ -175,8 +187,7 @@ form textarea {
 .chp_1 h2,
 .chp_2 h2 {
     background-color: rgba(0, 0, 0, 0.8);
-    padding: .5rem;
     width: 50%;
-    margin: auto;
+    margin: 2rem auto;
     padding: 1rem;
 }
