@@ -51,6 +51,11 @@ nav a{
     font-size: 1rem;
 }
 
+.info {
+    color: black;
+    text-align: center;
+}
+
 .premier_billet {
     color: #4c4c4c;
     background: white;
@@ -78,6 +83,29 @@ nav a{
     display: none;
 }
 
+.more_chapters {
+    text-align: center;
+}
+
+.tous_billets section {
+    color: #4c4c4c;
+    background: white;
+    width: 90%;
+    padding: .5rem 0;
+    margin: 2rem auto;
+    border: #4c4c4c solid 2px;
+}
+
+.tous_billets h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.tous_billets p {
+    text-align: justify;
+    margin: 3rem;
+}
+
 /* */
 
 form {
@@ -101,7 +129,8 @@ form textarea {
     text-decoration: underline white;
 }
 
-.admin li {
+.admin li,
+.more_chapters button {
     margin: 3rem auto;
     padding: 1rem;
     background-color: black;
