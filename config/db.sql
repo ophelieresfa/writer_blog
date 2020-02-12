@@ -21,13 +21,13 @@ INSERT INTO `Billets` (`titre`, `contenu`, `date_creation`) VALUES
 CREATE TABLE `Utilisateurs`
 (
     `id`        SMALLINT        UNSIGNED    PRIMARY KEY     AUTO_INCREMENT,
-    `name`      VARCHAR(50)     NOT NULL,
+    `pseudo`    VARCHAR(50)     NOT NULL,
     `email`     VARCHAR(100)    NOT NULL    UNIQUE,
     `pass`      VARCHAR(60)     NOT NULL
 )
     ENGINE=INNODB DEFAULT CHARSET=utf8;
 
-INSERT INTO `Utilisateurs` (`name`, `email`, `pass`) VALUES
+INSERT INTO `Utilisateurs` (`pseudo`, `email`, `pass`) VALUES
 
 ('Jean Forteroche', 'jean.forteroche@gmail.com', 'jeanforteroche'),
 
