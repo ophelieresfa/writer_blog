@@ -1,0 +1,19 @@
+{% extends 'layout/layout.twig' %}
+
+{% block main %}
+    <main class="white">
+        <section class="introduction">
+            <h1>Inscription</h1>
+            <p>Inscrivez-vous pour accéder à l'administration.</p>
+        </section>
+
+        <form class="subscribe" method="" action="">
+            <input name="email" class="email" type="email" placeholder="Email" required>
+            <input name="pass" class="pass" type="password" placeholder="Password" required>
+            <input name="passrepeat" class="passrepeat" type="password" placeholder="Repeat Password" required>
+            <input name="submit" type="submit" value="S'inscrire" class="submit">
+            <p>ou</p>
+            <input name="subscribe" type="button" value="Se connecter" class="sub">
+        </form>
+    </main>
+{% endblock %}
