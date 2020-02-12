@@ -7,26 +7,29 @@
             <p>Voici les commentaires des derniers chapitres.</p>
         </section>
 
+        <section class="premier_billet">
+            {% for billet in lastBillet %}
+                {% if billet.id == 1 %}
+                <h2>
+                    {{ billet.titre }}
+                </h2>
+                <p>
+                    {{ billet.contenu }}
+                </p>
+                {% endif %}
+            {% endfor %}
+        </section>
+
         <section class="tous_commentaires">
                 <section class="chp_1">
                     <h2>Commentaires du chapitre 1</h2>
                     {% for commentaire in lastComment %}
                         {% if commentaire.id_billet == 1 %}
                         <section class="commentaires">
-                            <p> {{ commentaire.contenu }} </p>
-                            <p> {{ commentaire.date_commentaire }} </p>
+                            <p>Écrit par : <span>{{ commentaire.auteur }}</span> :</p>
+                            <p>{{ commentaire.contenu | nl2br}}</p>
+                            <p>le <span>{{ commentaire.date_commentaire }} :</span></p>
                         </section>
-                        {% endif %}
-                    {% endfor %}
-                </section>
-                <section class="chp_2">
-                    <h2>Commentaires du chapitre 2</h2>
-                    {% for commentaire in lastComment %}
-                        {% if commentaire.id_billet == 2 %}
-                            <section class="commentaires">
-                                <p> {{ commentaire.contenu }} </p>
-                                <p> {{ commentaire.date_commentaire }} </p>
-                            </section>
                         {% endif %}
                     {% endfor %}
                 </section>
