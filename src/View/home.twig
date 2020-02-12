@@ -7,6 +7,8 @@
             <p>Je publierais chapitre par chapitre mon nouveau roman "Billet pour l'Alaska".</p>
         </section>
 
+        <p class="info">Voici le premier chapitre, accédez aux prochains chapitres dans le menu "Chapitres" :</p>
+
         <section class="premier_billet">
             {% for billet in lastBillet %}
                 <h2>
@@ -17,5 +19,8 @@
                 </p>
             {% endfor %}
         </section>
+        <div class="more_chapters">
+            <a href="index.php?action=chapters"><button>Voir plus de chapitres ...</button></a>
+        </div>
     </main>
 {% endblock %}
