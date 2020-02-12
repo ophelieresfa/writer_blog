@@ -1,0 +1,35 @@
+{% extends 'layout/layout.twig' %}
+
+{% block main %}
+    <main class="white">
+        <section class="introduction">
+                <h1>Billet pour l'Alaska</h1>
+            <p>Voici les commentaires des derniers chapitres.</p>
+        </section>
+
+        <section class="tous_commentaires">
+                <section class="chp_1">
+                    <h2>Commentaires du chapitre 1</h2>
+                    {% for commentaire in lastComment %}
+                        {% if commentaire.id_billet == 1 %}
+                        <section class="commentaires">
+                            <p> {{ commentaire.contenu }} </p>
+                            <p> {{ commentaire.date_commentaire }} </p>
+                        </section>
+                        {% endif %}
+                    {% endfor %}
+                </section>
+                <section class="chp_2">
+                    <h2>Commentaires du chapitre 2</h2>
+                    {% for commentaire in lastComment %}
+                        {% if commentaire.id_billet == 2 %}
+                            <section class="commentaires">
+                                <p> {{ commentaire.contenu }} </p>
+                                <p> {{ commentaire.date_commentaire }} </p>
+                            </section>
+                        {% endif %}
+                    {% endfor %}
+                </section>
+        </section>
+    </main>
+{% endblock %}
