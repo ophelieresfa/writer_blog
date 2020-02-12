@@ -9,13 +9,14 @@
 
         <section class="tous_billets">
             {% for billet in lastBillet %}
-                <section>
+                <section class="billets">
                     <h2>
                         {{ billet.titre }}
                     </h2>
                     <p>
                         {{ billet.contenu }}
                     </p>
+                    <a class="link_comments" href="index.php?action=comments">Commentaires</a>
                 </section>
             {% endfor %}
         </section>
