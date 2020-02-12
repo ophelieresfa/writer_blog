@@ -1,0 +1,19 @@
+{% extends 'layout/layout.twig' %}
+
+{% block main %}
+    <main class="white">
+        <section class="introduction">
+            <h1>Connexion</h1>
+            <p>Connectez-vous pour accéder à l'administration.</p>
+        </section>
+
+        <form class="connection"  method="" action="">
+            <input name="email" class="email" type="email" placeholder="Email" required>
+            <input name="pass" class="pass" type="password" placeholder="Password" required>
+            <input name="connect" type="submit" value="Se connecter" class="submit">
+            <p>ou</p>
+            <input name="sub" type="button" value="S'inscrire" class="sub">
+
+        </form>
+    </main>
+{% endblock %}
