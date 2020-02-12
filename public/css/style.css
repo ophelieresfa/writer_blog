@@ -109,16 +109,6 @@ form textarea {
     width: 40%;
 }
 
-.admin li:hover {
-    background-color: white;
-    color: black;
-    text-decoration: underline black;
-}
-
-.admin li:hover i {
-    color: black;
-}
-
 .admin i {
     margin-right: 1rem;
     color: white;
@@ -126,4 +116,11 @@ form textarea {
 
 .admin a {
     text-decoration: none;
+}
+
+.connection p,
+.subscribe p {
+    color: black;
+    text-align: center;
+    text-decoration: underline;
 }
