@@ -11,7 +11,8 @@ class HomeController extends MainController
     {
         $lastBillet = ModelFactory::getModel('Billets')->listData();
 
-        return $this->twig->render('home.twig', ['lastBillet' => $lastBillet]);
+        return $this->twig->render('home.twig', [
+            'lastBillet' => $lastBillet
+        ]);
     }
-
 }

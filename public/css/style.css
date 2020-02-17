@@ -83,14 +83,6 @@ main {
     margin: 3rem;
 }
 
-
-/* Cache les chapitres que l'on ne veut pas afficher */
-
-.premier_billet h2:nth-child(3),
-.premier_billet p:nth-child(4){
-    display: none;
-}
-
 .more_chapters {
     text-align: center;
 }
