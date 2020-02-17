@@ -1,6 +1,6 @@
 {
   "name": "ophelieresfa/writer_blog",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Projet 4 for OpenClassrooms - Creating blog for writer",
   "license": "MIT",
   "authors": [
@@ -17,10 +17,9 @@
   },
   "require": {
     "php": "7.3.9",
-    "twig/twig": "^3.0.1",
-    "tracy/tracy": "^2.7.2",
-    "altorouter/altorouter": "^2.0.1",
-    "filp/whoops": "^2.7.1",
-    "ext-pdo": "*"
+    "twig/twig": "^3.0.1"
+  },
+  "require-dev": {
+    "tracy/tracy": "^2.7.2"
   }
 }
