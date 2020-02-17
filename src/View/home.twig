@@ -1,5 +1,9 @@
 {% extends 'layout/layout.twig' %}
 
+{% block subtitle %}Accueil{% endblock %}
+
+{% block description %}Page d'accueil de mon blog. Bienvenue sur mon blog où vous trouverez mon nouveau livre "Billet simple pour l'Alaska".{% endblock %}
+
 {% block main %}
     <main class="white">
         <section class="introduction">
@@ -19,6 +23,7 @@
                 </p>
             {% endfor %}
         </section>
+
         <div class="more_chapters">
             <a href="index.php?action=chapters"><button>Voir plus de chapitres ...</button></a>
         </div>
