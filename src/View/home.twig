@@ -14,13 +14,15 @@
         <p class="info">Voici le premier chapitre, accédez aux prochains chapitres dans le menu "Chapitres" :</p>
 
         <section class="premier_billet">
-            {% for billet in lastBillet %}
-                <h2>
-                    {{ billet.titre }}
-                </h2>
-                <p>
-                    {{ billet.contenu }}
-                </p>
+            {% for billet in lastBillet [start:length] %}
+                {% if billet.id == 1 %}
+                    <h2>
+                        {{ billet.titre }}
+                    </h2>
+                    <p>
+                        {{ billet.contenu[:780]}} ...
+                    </p>
+                {% endif %}
             {% endfor %}
         </section>
 
