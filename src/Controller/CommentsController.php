@@ -23,7 +23,7 @@ class CommentsController extends MainController
         $lastBillet = ModelFactory::getModel('Billets')->readData($this->get['id']);
         $lastComment = ModelFactory::getModel('Commentaires')->listData($this->get['id'], 'id_billet');
 
-        return $this->render('comments.twig', [
+        return $this->twig->render('comments.twig', [
             'lastBillet' => $lastBillet,
             'lastComment' => $lastComment
         ]);
