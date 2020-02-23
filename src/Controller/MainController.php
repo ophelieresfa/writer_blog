@@ -6,15 +6,16 @@ use App\Controller\Extention\Extention;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
-class MainController
+abstract class MainController extends SupGlobController
 {
     protected $twig = null;
 
     public function __construct()
     {
+        parent::__construct();
         $this->twig = new Environment(new FilesystemLoader('../src/View'), array('cache' => false));
-
         $this->twig->addExtension(new Extention());
+        $this->twig->addGlobal('session', $_SESSION);
     }
 
     public function url(string $page, array $params = [])
