@@ -4,12 +4,12 @@ namespace App\Controller;
 
 use App\Model\Factory\ModelFactory;
 
-class AdminController extends MainController
+class ConsubController extends MainController
 {
 
     public function controllerMethod()
     {
-        return $this->twig->render('admin.twig');
+        return $this->twig->render('consub.twig');
     }
 
 }

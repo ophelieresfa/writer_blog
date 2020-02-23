@@ -140,7 +140,7 @@ form textarea {
     font-size: 1rem;
 }
 
-.admin {
+.consub {
     color: black;
     text-align: center;
     list-style-type: none;
@@ -148,7 +148,7 @@ form textarea {
     text-decoration: underline white;
 }
 
-.admin li,
+.consub li,
 .more_chapters button {
     margin: 3rem auto;
     padding: 1rem;
@@ -157,12 +157,12 @@ form textarea {
     width: 40%;
 }
 
-.admin i {
+.consub i {
     margin-right: 1rem;
     color: white;
 }
 
-.admin a {
+.consub a {
     text-decoration: none;
 }
 
