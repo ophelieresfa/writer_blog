@@ -6,7 +6,7 @@ use App\Controller\Extention\Extention;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
-abstract class MainController extends SupGlobController
+abstract class MainController extends GlobalController
 {
     protected $twig = null;
 
@@ -31,10 +31,5 @@ abstract class MainController extends SupGlobController
         header('Location: index.php?' . http_build_query($params));
 
         exit;
-    }
-
-    public function render(string $view, array $params = [])
-    {
-        return $this->twig->render($view, $params);
     }
 }
