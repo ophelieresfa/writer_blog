@@ -23,9 +23,7 @@ class Extention extends AbstractExtension
     public function getFunctions()
     {
         return array(
-            new TwigFunction('url', array($this, 'url')),
-            new TwigFunction('getSessionArray', array($this, 'getSessionArray')),
-            new TwigFunction('isLogged', array($this, 'isLogged'))
+            new TwigFunction('url', array($this, 'url'))
         );
 
     }
@@ -34,30 +32,5 @@ class Extention extends AbstractExtension
     {
         $params['action'] = $page;
         return 'index.php?' . http_build_query($params);
-    }
-
-    public function getSessionArray()
-    {
-        return $this->session;
-    }
-
-    public function isLogged()
-    {
-        if (array_key_exists('user', $this->session))
-        {
-            if (!empty($this->session['user']))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public function getUserVar($var)
-    {
-        if ($this->isLogged() === false) {
-            $this->user[$var] = null;
-        }
-        return $this->user[$var];
     }
 }
