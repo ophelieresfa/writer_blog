@@ -20,8 +20,8 @@ class CommentsController extends MainController
 
     public function readMethod()
     {
-        $billet = ModelFactory::getModel('Billets')->readData($this->get->getGetVar('id'));
-        $comments = ModelFactory::getModel('Commentaires')->listData($this->get->getGetVar('id'), 'id_billet');
+        $billet = ModelFactory::getModel('Billets')->readData($this->get->getVar('id'));
+        $comments = ModelFactory::getModel('Commentaires')->listData($this->get->getVar('id'), 'id_billet');
 
         return $this->twig->render('allChapters.twig', [
             'billet' => $billet,
