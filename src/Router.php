@@ -7,7 +7,7 @@ class Router
 
     const PATH_CONTROLLER = 'App\Controller\\';
     const HOME_CONTROLLER = 'HomeController';
-    const METHOD_CONTROLLER = 'controllerMethod';
+    const METHOD_CONTROLLER = 'startrMethod';
 
     private $controller = self::HOME_CONTROLLER;
     private $method = self::METHOD_CONTROLLER;
@@ -29,7 +29,7 @@ class Router
 
         $action = explode('!', $action);
         $this->controller = $action[0];
-        $this->method = count($action) == 1 ? 'controller' : $action[1];
+        $this->method = count($action) == 1 ? 'start' : $action[1];
     }
 
     public function setController()

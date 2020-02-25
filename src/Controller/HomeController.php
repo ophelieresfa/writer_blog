@@ -7,7 +7,7 @@ use App\Model\Factory\ModelFactory;
 class HomeController extends MainController
 {
 
-    public function controllerMethod()
+    public function startMethod()
     {
         $lastBillet = ModelFactory::getModel('Billets')->listData();
 

@@ -6,7 +6,7 @@ use App\Model\Factory\ModelFactory;
 
 class AdminController extends MainController
 {
-    public function controllerMethod()
+    public function startrMethod()
     {
         if ($this->session->isLogged()) {
             $users = ModelFactory::getModel('Utilisateurs')->readData('id');

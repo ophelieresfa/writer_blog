@@ -6,7 +6,7 @@ use App\Model\Factory\ModelFactory;
 
 class SubscribeController extends MainController
 {
-    public function controllerMethod()
+    public function startMethod()
     {
         return $this->twig->render('subscribe.twig');
     }
