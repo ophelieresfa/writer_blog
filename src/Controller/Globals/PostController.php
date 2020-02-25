@@ -11,12 +11,12 @@ class PostController
         $this->post = filter_input_array(INPUT_POST);
     }
 
-    public function getPostArray()
+    public function postArray()
     {
         return $this->post;
     }
 
-    public function getPostVar(string $var)
+    public function postVar(string $var)
     {
         return $this->post[$var];
     }
