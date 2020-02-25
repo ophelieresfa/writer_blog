@@ -7,7 +7,7 @@ use App\Model\Factory\ModelFactory;
 class CommentsController extends MainController
 {
 
-    public function controllerMethod()
+    public function startMethod()
     {
         $billets = ModelFactory::getModel('Billets')->listData();
         $comments = ModelFactory::getModel('Commentaires')->listData();
