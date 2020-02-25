@@ -12,29 +12,23 @@
         </section>
 
         <section class="premier_billet">
-            {% for billet in lastBillet %}
-                {% if billet.id == 1 %}
                 <h2>
                     {{ billet.titre }}
                 </h2>
                 <p>
                     {{ billet.contenu }}
                 </p>
-                {% endif %}
-            {% endfor %}
         </section>
 
         <section class="tous_commentaires">
                 <section class="chp_1">
-                    <h2>Commentaires du chapitre 1</h2>
-                    {% for commentaire in lastComment %}
-                        {% if commentaire.id_billet == 1 %}
+                    <h2>Commentaires du chapitre {{ billet.id }}</h2>
+                    {% for comment in comments %}
                         <section class="commentaires">
-                            <p>Écrit par : <span>{{ commentaire.auteur }}</span> :</p>
-                            <p>{{ commentaire.contenu | nl2br}}</p>
-                            <p>le <span>{{ commentaire.date_commentaire }} :</span></p>
+                            <p>Écrit par : <span>{{ comment.auteur }}</span> :</p>
+                            <p>{{ comment.contenu | nl2br}}</p>
+                            <p>le <span>{{ comment.date_commentaire }} :</span></p>
                         </section>
-                        {% endif %}
                     {% endfor %}
                 </section>
         </section>

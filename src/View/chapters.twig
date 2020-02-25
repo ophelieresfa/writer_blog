@@ -21,7 +21,7 @@
                     <p>
                         {{ billet.contenu[:700] }} ...
                     </p>
-                    <a class="link_comments" href="{{ url('comments') }}">Accéder au chapitre</a>
+                    <a class="link_comments" href="{{ url('comments!read', {'id': billet.id}, {'id': commentaire.id_billet})}}">Accéder au chapitre</a>
                 </section>
             {% endfor %}
         </section>

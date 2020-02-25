@@ -11,14 +11,12 @@
             <p>Connectez-vous pour accéder à l'espace d'administration.</p>
         </section>
 
-        <form class="connection"  method="" action="">
-            <input name="pseudo" class="pseudo" type="text" placeholder="Pseudo" required>
+        <form class="connection"  method="post" action="{{ url('connection!login') }}">
             <input name="email" class="email" type="email" placeholder="Email" required>
-            <input name="pass" class="pass" type="password" placeholder="Mot de passe" required>
-            <input name="connect" type="submit" value="Se connecter" class="submit">
+            <input name="password" class="password" type="password" placeholder="Mot de passe" required>
+            <input type="submit" value="Se connecter" class="submit">
             <p>ou</p>
             <a href="{{ url('subscribe') }}" class="other"><input name="sub" type="button" value="S'inscrire"></a>
-
         </form>
     </main>
 {% endblock %}
