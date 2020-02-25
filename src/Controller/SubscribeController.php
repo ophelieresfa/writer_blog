@@ -6,7 +6,6 @@ use App\Model\Factory\ModelFactory;
 
 class SubscribeController extends MainController
 {
-
     public function controllerMethod()
     {
         return $this->twig->render('subscribe.twig');
@@ -14,16 +13,14 @@ class SubscribeController extends MainController
 
     public function createMethod()
     {
-        if (!empty($this->post->getPostArray())) {
-            $user = ModelFactory::getModel('Utilisateurs')->readData($this->post->getPostVar('email'),'email');
+        if (!empty($this->post->postArray())) {
+            $data['pseudo'] = $this->post->postVar('pseudo');
+            $data['email'] = $this->post->postVar('email');
+            $data['password'] = password_hash($this->post->postVar('password'), PASSWORD_DEFAULT);
 
-            if (empty($user) == false) {
-                $data = password_hash($this->post->getPostVar('password'), PASSWORD_DEFAULT);
-
-                ModelFactory::getModel('Utilisateurs')->createData($data);
-                $this->redirect('home');
-            }
-            return $this->twig->render('subscribe.twig');
+            ModelFactory::getModel('Utilisateurs')->createData($data);
+            $this->redirect('home');
         }
+        return $this->twig->render('subscribe.twig');
     }
 }
