@@ -1,14 +1,14 @@
-@-webkit-keyframes color_nav {
-    0%   {background-color: rgba(0, 0, 0, 0.8);}
-    50%   {background-color: rgba(0, 0, 0, 0.9);}
-    100%  {background-color: rgba(0, 0, 0, 0.8);}
+/*@-webkit-keyframes color_nav {
+    0%   {background-color: rgba(44, 145, 135, 0.8);}
+    50%   {background-color: rgba(23, 32, 145, 0.8);}
+    100%  {background-color: rgba(44, 145, 135, 0.8);}
 }
 
 @keyframes color_nav {
-    0%   {background-color: rgba(0, 0, 0, 0.8);}
-    50%   {background-color: rgba(0, 0, 0, 0.9);}
-    100%  {background-color: rgba(0, 0, 0, 0.8);}
-}
+    0%   {background-color: rgba(44, 145, 135, 0.8);}
+    50%   {background-color: rgba(23, 32, 145, 0.8);}
+    100%  {background-color: rgba(44, 145, 135, 0.8);}
+}*/
 
 .white {
     color: white;
@@ -19,7 +19,7 @@ ul {
 }
 
 body {
-    background-color: #ededed;
+    background-color: #f3f6f9;
 }
 
 nav {
@@ -27,8 +27,7 @@ nav {
     font-family: 'Amatic SC', cursive, 'sans-serif';
     font-size: 1.2rem;
     letter-spacing: .1rem;
-    -webkit-animation: color_nav 2s linear infinite;
-    animation: color_nav 2s linear infinite;
+    background: linear-gradient(90deg, black, #3b3b3b) ;
 }
 
 nav li {
@@ -37,19 +36,23 @@ nav li {
     padding: .2rem;
 }
 
+nav li a:hover {
+    color: #2c9187;
+    text-decoration: underline;
+}
+
 nav a{
     color: white;
     text-decoration: none;
 }
 
 header h1 {
-    background-color: black;
+    background-color: rgba(44, 145, 135, 0.8);
     margin: 1rem auto;
     padding: 2rem;
     color: white;
     text-align: center;
-    font-family: 'Patick Hand', cursive, 'sans-serif';
-}
+    font-family: 'Amatic SC', cursive, 'sans-serif';}
 
 main {
     font-family: 'Neucha', cursive, 'sans-serif';
@@ -58,14 +61,20 @@ main {
 .introduction {
     color: black;
     text-align: center;
-    background-color: white;
+    border: 4px solid #2c9187;
     padding: 1rem;
     width: 85%;
     margin: 2rem auto;
+    background-color: white;
 }
 
 .introduction {
     font-size: 1rem;
+}
+
+.introduction h1 {
+    color: #91243b;
+
 }
 
 .introduction p {
@@ -73,7 +82,7 @@ main {
 }
 
 .info {
-    color: black;
+    color: #2c9187;
     text-align: center;
 }
 
@@ -100,6 +109,16 @@ main {
     text-align: center;
 }
 
+.more_chapters a button {
+    font-family: 'Neucha', cursive, 'sans-serif';
+    font-size: .9rem;
+}
+
+.more_chapters a button:hover {
+    color: #2c9187;
+    cursor: pointer;
+}
+
 .tous_billets,
 .tous_commentaires {
     text-align: center;
@@ -116,12 +135,12 @@ main {
 
 .tous_commentaires .commentaires {
     color: #222222;
-    background: #a7a7a7;
+    border: 2px solid #2c9187;
     width: 60%;
     text-align: left;
     padding: 1rem 0 1rem 0;
     margin: 2rem auto;
-    border: #4c4c4c solid 2px;
+    background-color: white;
 }
 
 .commentaires p {
@@ -158,7 +177,6 @@ form textarea {
     text-align: center;
     list-style-type: none;
     font-size: 1.1rem;
-    text-decoration: underline white;
 }
 
 .consub li,
@@ -168,6 +186,11 @@ form textarea {
     background-color: black;
     color: white;
     width: 40%;
+}
+
+.consub li:hover {
+    color: #2c9187;
+    text-decoration: underline #2c9187;
 }
 
 .consub i {
@@ -186,8 +209,13 @@ form textarea {
     text-decoration: underline;
 }
 
-.other{
+.link_other {
     margin: auto;
+}
+
+.other{
+    padding: 1rem;
+    font-size: 1rem;
 }
 
 .link_comments {
@@ -197,10 +225,25 @@ form textarea {
     padding: 1rem;
 }
 
+.or {
+    color: black;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.link_comments:hover {
+    color: #2c9187;
+}
+
 .chp_1 h2,
 .chp_2 h2 {
     background-color: rgba(0, 0, 0, 0.8);
     width: 50%;
     margin: 2rem auto;
     padding: 1rem;
+}
+
+.btn_submit {
+    padding: 1rem;
+    font-size: 1rem;
 }
