@@ -1,0 +1,20 @@
+{% extends 'layout/layout.twig' %}
+
+{% block subtitle %}Connecté(e){% endblock %}
+
+{% block description %}{% endblock %}
+
+{% block main %}
+    <main class="white">
+        <section class="introduction">
+            <h1>Connecté(e)</h1>
+            {% for user in users %}
+            <p>Bienvenue {{ user.pseudo }} sur l'espace d'administration.</p>
+            {% endfor %}
+        </section>
+
+        <section>
+            <p>Vous pouvez dès à présent faire des modifications.</p>
+        </section>
+    </main>
+{% endblock %}
