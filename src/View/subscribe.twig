@@ -12,14 +12,13 @@
             <p>Inscrivez-vous pour accéder à l'espace d'administration.</p>
         </section>
 
-        <form id="signup" class="subscribe" method="post" action="{{ url('subscribe!create') }}" enctype="multipart/form-data">
+        <form id="signup" class="subscribe!create" method="post" action="{{ url('subscribe!create') }}" enctype="multipart/form-data">
             <input name="pseudo" class="pseudo" type="text" placeholder="Pseudo" required>
             <input name="email" class="email" type="email" placeholder="Email" required>
             <input name="password" class="password" type="password" placeholder="Mot de passe" required>
-            <input name="passrepeat" class="passrepeat" type="password" placeholder="Repéter Mot de passe" required>
-            <input name="submit" type="submit" value="S'inscrire" class="submit">
+            <button type="submit">S'inscrire</button>
             <p>ou</p>
-            <a href="{{ url('connection!login') }}" class="other"><input name="connect" type="button" value="Se connecter"></a>
+            <a href="{{ url('connection!login') }}" class="other"><button type="button">Se connecter</button></a>
         </form>
     </main>
 {% endblock %}
