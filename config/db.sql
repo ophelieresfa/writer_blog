@@ -23,15 +23,16 @@ CREATE TABLE `Utilisateurs`
     `id`        SMALLINT        UNSIGNED    PRIMARY KEY     AUTO_INCREMENT,
     `pseudo`    VARCHAR(50)     NOT NULL,
     `email`     VARCHAR(100)    NOT NULL    UNIQUE,
-    `pass`      VARCHAR(60)     NOT NULL
+    `password`  VARCHAR(60)     NOT NULL,
+    `status`    SET('admin','member','visitor')   NOT NULL DEFAULT 'visitor'
 )
     ENGINE=INNODB DEFAULT CHARSET=utf8;
 
-INSERT INTO `Utilisateurs` (`pseudo`, `email`, `pass`) VALUES
+INSERT INTO `Utilisateurs` (`pseudo`, `email`, `password`, `status`) VALUES
 
-('Jean Forteroche', 'jean.forteroche@gmail.com', 'jeanforteroche'),
+('Jean', 'jean.forteroche@gmail.com', '$2y$10$pUjRCJyfmb/wcnM.hzahu.dQWdXiEpj3ZXI7cnEzFB/DHy5JoZ3mq', 'admin'),
 
-('Invité', 'invite@gmail.com', 'root');
+('Invité', 'invite@gmail.com', '$2y$10$TqTeEGu2guIwfLZdmywpUOcBywujdBfK6HIXrIZ2Vp5E1tGXlcWbK', 'member');
 
 CREATE TABLE `Commentaires`
 (
