@@ -8,10 +8,10 @@ class ConnectionController extends MainController
 {
     public function loginMethod()
     {
-        if (!empty($this->post->getPostArray())) {
-            $user = ModelFactory::getModel('Utilisateurs')->readData($this->post->getPostVar('email'), 'email');
+        if (!empty($this->post->postArray())) {
+            $user = ModelFactory::getModel('Utilisateurs')->readData($this->post->postVar('email'), 'email');
 
-            if (password_verify($this->post->getPostVar('password'), $user['password'])) {
+            if (password_verify($this->post->postVar('password'), $user['password'])) {
                 $this->session->createSession(
                     $user['id'],
                     $user['pseudo'],
@@ -22,8 +22,7 @@ class ConnectionController extends MainController
                 $this->redirect('admin');
             }
         }
-        return $this->twig->render('connection.twig');
-    }
+        return $this->twig->render('connection.twig');}
 
     public function logoutMethod()
     {
