@@ -11,12 +11,12 @@ class GetController
         $this->get = filter_input_array(INPUT_GET);
     }
 
-    public function getGetArray()
+    public function getArray()
     {
         return $this->get;
     }
 
-    public function getGetVar(string $var)
+    public function getVar(string $var)
     {
         return $this->get[$var];
     }

@@ -42,12 +42,12 @@ class SessionController
         return false;
     }
 
-    public function getSessionArray()
+    public function sessionArray()
     {
         return $this->session;
     }
 
-    public function getUserArray()
+    public function userArray()
     {
         if ($this->isLogged() === false)
         {
@@ -56,7 +56,7 @@ class SessionController
         return $this->user;
     }
 
-    public function getUserVar($var)
+    public function userVar($var)
     {
         if ($this->isLogged() === false)
         {
