@@ -8,14 +8,12 @@
     <main class="white">
         <section class="introduction">
             <h1>Connecté(e)</h1>
-            {% for user in users %}
             <p>Bienvenue {{ user.pseudo }} sur l'espace d'administration.</p>
-            {% endfor %}
         </section>
 
-        <section>
+        <section class="administration">
             <p>Vous pouvez dès à présent faire des modifications.</p>
+            <a class="link_other" href="{{ url('connection!logout') }}"><button class="other" type="button">Se déconnecter</button></a>
         </section>
-        <a href="{{ url('connection!logout') }}" class="other"><input name="sub" type="button" value="Déconnection"></a>
     </main>
 {% endblock %}
