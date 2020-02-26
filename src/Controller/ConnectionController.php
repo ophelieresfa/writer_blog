@@ -8,6 +8,10 @@ class ConnectionController extends MainController
 {
     public function loginMethod()
     {
+        if (!empty($this->session->isLogged())) {
+            return $this->twig->render('admin.twig');
+        }
+
         if (!empty($this->post->postArray())) {
             $user = ModelFactory::getModel('Utilisateurs')->readData($this->post->postVar('email'), 'email');
 
@@ -16,13 +20,14 @@ class ConnectionController extends MainController
                     $user['id'],
                     $user['pseudo'],
                     $user['email'],
-                    $user['password'],
-                    $user['status']
+                    $user['password']
                 );
                 $this->redirect('admin');
             }
         }
-        return $this->twig->render('connection.twig');}
+        return $this->twig->render('connection.twig');
+    }
+
 
     public function logoutMethod()
     {
