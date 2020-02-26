@@ -16,7 +16,7 @@
             <input name="pseudo" class="pseudo" type="text" placeholder="Pseudo" required>
             <input name="email" class="email" type="email" placeholder="Email" required>
             <input name="password" class="password" type="password" placeholder="Mot de passe" required>
-            <button class="btn_submit" type="submit">S'inscrire</button>
+            <a class="link_other" href="{{ url('subscribe!create') }}"><button class="other" type="submit">S'inscrire</button></a>
             <p class="or">ou</p>
             <a class="link_other" href="{{ url('connection!login') }}"><button class="other" type="button">Se connecter</button></a>
         </form>
