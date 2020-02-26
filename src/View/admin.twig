@@ -8,11 +8,11 @@
     <main class="white">
         <section class="introduction">
             <h1>Connecté(e)</h1>
-            <p>Bienvenue {{ user.pseudo }} sur l'espace d'administration.</p>
+            <p>Bienvenue sur l'espace d'administration {{ pseudo }}.</p>
         </section>
 
         <section class="administration">
-            <p>Vous pouvez dès à présent faire des modifications.</p>
+            <p>Vous pouvez dès à présent faire des modifications   {{ billet.titre }}.</p>
             <a class="link_other" href="{{ url('connection!logout') }}"><button class="other" type="button">Se déconnecter</button></a>
         </section>
     </main>
