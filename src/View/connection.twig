@@ -14,7 +14,7 @@
         <form class="connection"  method="post" action="{{ url('connection!login') }}">
             <input name="email" class="email" type="email" placeholder="Email" required>
             <input name="password" class="password" type="password" placeholder="Mot de passe" required>
-            <button class="btn_submit" type="submit">Se connecter</button>
+            <a class="link_other" href="{{ url('admin!read') }}"><button class="other" type="submit">Se connecter</button></a>
             <p class="or">ou</p>
             <a class="link_other" href="{{ url('subscribe') }}"><button class="other" type="button">S'inscrire</button></a>
         </form>
