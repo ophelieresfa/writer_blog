@@ -7,7 +7,7 @@ use App\Model\Factory\ModelFactory;
 class ContactController extends MainController
 {
 
-    public function startrMethod()
+    public function startMethod()
     {
         return $this->twig->render('contact.twig');
     }

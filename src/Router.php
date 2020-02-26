@@ -7,7 +7,7 @@ class Router
 
     const PATH_CONTROLLER = 'App\Controller\\';
     const HOME_CONTROLLER = 'HomeController';
-    const METHOD_CONTROLLER = 'startrMethod';
+    const METHOD_CONTROLLER = 'startMethod';
 
     private $controller = self::HOME_CONTROLLER;
     private $method = self::METHOD_CONTROLLER;
