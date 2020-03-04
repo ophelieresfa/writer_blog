@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Model\Factory\ModelFactory;
 
-class ChaptersController extends MainController
+class ArticlesController extends MainController
 {
 
     public function startMethod()
