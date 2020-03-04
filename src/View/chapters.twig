@@ -13,7 +13,7 @@
         </section>
 
         <section class="tous_billets">
-            {% for billet in lastBillet [start:length] %}
+            {% for billet in billets [start:length] %}
                 <section class="billets">
                     <h2>
                         {{ billet.titre }}
@@ -21,7 +21,7 @@
                     <p>
                         {{ billet.contenu[:700] }} ...
                     </p>
-                    <a class="link_comments" href="{{ url('comments!read', {'id': billet.id}, {'id': commentaire.id_billet})}}">Accéder au chapitre</a>
+                    <a class="link_comments" href="{{ url('articles!read', {'id': billet.id}, {'id': commentaire.id_billet})}}">Accéder au chapitre</a>
                 </section>
             {% endfor %}
         </section>
