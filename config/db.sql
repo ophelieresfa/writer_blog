@@ -24,15 +24,15 @@ CREATE TABLE `Utilisateurs`
     `pseudo`    VARCHAR(50)     NOT NULL,
     `email`     VARCHAR(100)    NOT NULL    UNIQUE,
     `password`  VARCHAR(60)     NOT NULL,
-    `status`    SET('admin','member','visitor')   NOT NULL DEFAULT 'visitor'
+    `admin`     SMALLINT(1)     NOT NULL
 )
     ENGINE=INNODB DEFAULT CHARSET=utf8;
 
-INSERT INTO `Utilisateurs` (`pseudo`, `email`, `password`, `status`) VALUES
+INSERT INTO `Utilisateurs` (`pseudo`, `email`, `password`, `admin`) VALUES
 
-('Jean', 'jean.forteroche@gmail.com', '$2y$10$pUjRCJyfmb/wcnM.hzahu.dQWdXiEpj3ZXI7cnEzFB/DHy5JoZ3mq', 'admin'),
+('Jean', 'jean.forteroche@gmail.com', '$2y$10$pUjRCJyfmb/wcnM.hzahu.dQWdXiEpj3ZXI7cnEzFB/DHy5JoZ3mq', 1),
 
-('Invité', 'invite@gmail.com', '$2y$10$TqTeEGu2guIwfLZdmywpUOcBywujdBfK6HIXrIZ2Vp5E1tGXlcWbK', 'member');
+('Invité', 'invite@gmail.com', '$2y$10$TqTeEGu2guIwfLZdmywpUOcBywujdBfK6HIXrIZ2Vp5E1tGXlcWbK', 0);
 
 CREATE TABLE `Commentaires`
 (
@@ -47,13 +47,13 @@ CREATE TABLE `Commentaires`
 
 INSERT INTO `Commentaires` (`contenu`, `auteur`, `date_commentaire`, `id_billet`, `id_utilisateur`) VALUES
 
-('+1 !', 'Invité', '2010-03-25 17:12:52', '1', '2'),
+('+1 !', 'Invité', '2010-03-25 17:12:52', 1, 2),
 
 ('Excellente analyse de la situation !
-Il y arrivera plus tôt qu''on ne le pense !', 'Jean Forteroche', '2010-03-27 22:02:13', '2', '1'),
+Il y arrivera plus tôt qu\'on ne le pense !', 'Jean Forteroche', '2010-03-27 22:02:13', 2, 1),
 
-('Oui, ça commence pas très fort ce blog...', 'Jean Forteroche', '2010-03-25 16:57:16', '2', '1'),
+('Oui, ça commence pas très fort ce blog...', 'Jean Forteroche', '2010-03-25 16:57:16', 2, 1),
 
-('Preums !', 'Invité', '2010-03-27 18:59:49', '1', '2'),
+('Preums !', 'Invité', '2010-03-27 18:59:49', 1, 2),
 
-('Un peu court ce billet !', 'Invité', '2010-03-25 16:49:53', '1', '2');
+('Un peu court ce billet !', 'Invité', '2010-03-25 16:49:53', 1, 2);
