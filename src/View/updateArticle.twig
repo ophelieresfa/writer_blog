@@ -16,7 +16,7 @@
             <input name="titre" type="text" value="{{billet.titre}}">
             <textarea name="contenu" rows="5">{{billet.contenu}}</textarea>
             <input name="date" type="hidden" value="{{ date()|date('Y-m-d H:i:s') }}">
-            <a href="{{ url('user!login') }}">Quitter</a>
+            <a href="{{ url('admin') }}">Quitter</a>
             <input type="reset" value="Effacer">
             <input type="submit" value="Créer">
         </form>
