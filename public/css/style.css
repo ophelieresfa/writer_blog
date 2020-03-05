@@ -248,3 +248,19 @@ form textarea {
     margin: auto;
     text-align: center;
 }
+
+div {
+    text-align: center;
+}
+
+.admin_update {
+    margin-top: 2rem;
+}
+
+.admin_update a {
+    color: white;
+    background-color: #2c5076;
+    padding: 1rem;
+    text-decoration: none;
+
+}
