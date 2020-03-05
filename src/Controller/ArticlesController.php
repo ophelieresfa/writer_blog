@@ -31,7 +31,7 @@ class ArticlesController extends MainController
 
     public function readMethod()
     {
-        $billet = Modeactory::getModel('Billets')->readData($this->get->getVar('id'));
+        $billet = ModelFactory::getModel('Billets')->readData($this->get->getVar('id'));
         $comments = ModelFactory::getModel('Commentaires')->listData($this->get->getVar('id'), 'id_billet');
 
         return $this->twig->render('allChapters.twig', [
@@ -43,7 +43,7 @@ class ArticlesController extends MainController
 
     public function updateMethod()
     {
-        var_dump($this->post->postVar('id'));
+        var_dump($this->post->postArray());
         if (!empty($this->post->postArray())) {
             $data['id'] = $this->post->postVar('id');
             $data['titre'] = $this->post->postVar('titre');
@@ -64,7 +64,7 @@ class ArticlesController extends MainController
 
     public function deleteMethod()
     {
-        ModelFactory::getModel('Billets')->deleteData($this->get->getVar('titre'));
+        ModelFactory::getModel('Billets')->deleteData($this->get->getVar('id'));
         $this->redirect('admin');
     }
 }

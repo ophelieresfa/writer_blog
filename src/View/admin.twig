@@ -15,7 +15,7 @@
             <p>Vous pouvez dès à présent faire des modifications.</p>
             <a class="link_other" href="{{ url('user!logout') }}"><button class="other" type="button">Se déconnecter</button></a>
         </section>
-        <div>
+        <div class="admin_update">
             <a href="{{ url("articles!create") }}">Ajouter un chapitre</a>
             <section class="tous_billets">
                 {% for billet in billets %}
