@@ -12,8 +12,26 @@
         </section>
 
         <section class="administration">
-            <p>Vous pouvez dès à présent faire des modifications {{ billet.titre }}.</p>
-            <a class="link_other" href="{{ url('connection!logout') }}"><button class="other" type="button">Se déconnecter</button></a>
+            <p>Vous pouvez dès à présent faire des modifications.</p>
+            <a class="link_other" href="{{ url('user!logout') }}"><button class="other" type="button">Se déconnecter</button></a>
         </section>
+        <div>
+            <a href="{{ url("articles!create") }}">Ajouter un chapitre</a>
+            <section class="tous_billets">
+                {% for billet in billets %}
+                    <section class="billets">
+                        <h2>
+                            {{ billet.titre }}
+                        </h2>
+                        <p>
+                            {{ billet.contenu }}
+                        </p>
+                        <a href="{{ url('articles!update', {'id': billet.id}) }}">Modifier</a>
+                        <a href="{{ url("articles!delete", {'id': billet.id}) }}">Supprimer</a>
+
+                    </section>
+                {% endfor %}
+            </section>
+        </div>
     </main>
 {% endblock %}
