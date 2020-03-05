@@ -30,9 +30,7 @@ CREATE TABLE `Utilisateurs`
 
 INSERT INTO `Utilisateurs` (`pseudo`, `email`, `password`, `admin`) VALUES
 
-('Jean', 'jean.forteroche@gmail.com', '$2y$10$pUjRCJyfmb/wcnM.hzahu.dQWdXiEpj3ZXI7cnEzFB/DHy5JoZ3mq', 1),
-
-('Invité', 'invite@gmail.com', '$2y$10$TqTeEGu2guIwfLZdmywpUOcBywujdBfK6HIXrIZ2Vp5E1tGXlcWbK', 0);
+('Jean', 'jean.forteroche@gmail.com', '$2y$10$pUjRCJyfmb/wcnM.hzahu.dQWdXiEpj3ZXI7cnEzFB/DHy5JoZ3mq', 1);
 
 CREATE TABLE `Commentaires`
 (
