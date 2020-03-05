@@ -1,0 +1,24 @@
+{% extends 'layout/layout.twig' %}
+
+{% block subtitle %}Modifier un chapitre{% endblock %}
+
+{% block description %}Administration : Modification d'un article.{% endblock %}
+
+{% block main %}
+    <main class="white">
+        <section class="introduction">
+            <h1>Modifier le chapitre {{ billet.id}}</h1>
+            <p>Vous pouvez modifier le chapitre ici.</p>
+        </section>
+
+        <form  method="post" action="{{ url("articles!update", {'id': billet.id}) }}" >
+            <input name="id" type="text" value="{{billet.id}}">
+            <input name="titre" type="text" value="{{billet.titre}}">
+            <textarea name="contenu" rows="5">{{billet.contenu}}</textarea>
+            <input name="date" type="hidden" value="{{ date()|date('Y-m-d H:i:s') }}">
+            <a href="{{ url('user!login') }}">Quitter</a>
+            <input type="reset" value="Effacer">
+            <input type="submit" value="Créer">
+        </form>
+    </main>
+{% endblock %}
