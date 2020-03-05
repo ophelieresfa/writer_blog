@@ -9,15 +9,14 @@ class UserController extends MainController
 
     public function startMethod()
     {
+        if (!empty($this->session->isLogged())) {
+            return $this->twig->render('admin.twig');
+        }
         return $this->twig->render('consub.twig');
     }
 
     public function loginMethod()
     {
-        if (!empty($this->session->isLogged())) {
-            return $this->twig->render('admin.twig');
-        }
-
         if (!empty($this->post->postArray())) {
             $user = ModelFactory::getModel('Utilisateurs')->readData($this->post->postVar('email'), 'email');
 
@@ -53,5 +52,4 @@ class UserController extends MainController
         }
         return $this->twig->render('subscribe.twig');
     }
-
 }
