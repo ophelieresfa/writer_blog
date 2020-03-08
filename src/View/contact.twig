@@ -11,7 +11,7 @@
             <p>Vous pouvez me contacter via ce formulaire de contact.</p>
         </section>
 
-        <form  method="post" action="{{ url('contact!mail') }}" enctype="text/plain">
+        <form  method="post" action="{{ url('contact!send') }}" enctype="text/plain">
             <input name="nom" class="nom" type="text" placeholder="Nom">
             <input name="prenom" class="prenom" type="text" placeholder="Prénom">
             <input name="email" class="email" type="email" placeholder="Email">
