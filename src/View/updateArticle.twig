@@ -12,13 +12,12 @@
         </section>
 
         <form  method="post" action="{{ url("articles!update", {'id': billet.id}) }}" >
-            <input name="id" type="text" value="{{billet.id}}">
             <input name="titre" type="text" value="{{billet.titre}}">
             <textarea name="contenu" rows="5">{{billet.contenu}}</textarea>
             <input name="date" type="hidden" value="{{ date()|date('Y-m-d H:i:s') }}">
-            <a href="{{ url('admin') }}">Quitter</a>
             <input type="reset" value="Effacer">
-            <input type="submit" value="Créer">
+            <input type="submit" value="Modifier">
+            <a class="quit" href="{{ url('admin') }}">Quitter</a>
         </form>
     </main>
 {% endblock %}
