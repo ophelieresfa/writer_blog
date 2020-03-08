@@ -1,0 +1,29 @@
+{% extends 'layout/layout.twig' %}
+
+{% block subtitle %}Connecté(e){% endblock %}
+
+{% block description %}{% endblock %}
+
+{% block main %}
+    <main class="white">
+        <section class="introduction">
+            <h1>Billet pour l'Alaska</h1>
+        </section>
+
+        <section class="tous_commentaires">
+            <section class="chp_1">
+                <h2>Commentaires du chapitre {{ billet.id }}</h2>
+                <a href="{{ url("comments!create") }}">Ajouter un commentaire</a>
+
+                {% for comment in comments %}
+                    <section class="commentaires">
+                        <p>Écrit par : <span>{{ comment.auteur }}</span> :</p>
+                        <p>{{ comment.contenu | nl2br}}</p>
+                        <p>le <span>{{ comment.date_commentaire }} :</span></p>
+                        <a href="{{ url("comments!delete", {'id': billet.id}) }}">Supprimer le commentaire</a>
+                    </section>
+                {% endfor %}
+            </section>
+        </section>
+    </main>
+{% endblock %}

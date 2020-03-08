@@ -1,0 +1,26 @@
+{% extends 'layout/layout.twig' %}
+
+{% block subtitle %}Ajouter un commentaire{% endblock %}
+
+{% block description %}Administration : Ajout d'un nouveau commentaire.{% endblock %}
+
+{% block main %}
+    <main class="white">
+        <section class="introduction">
+            <h1>Ajouter un nouveau commentaire</h1>
+            <p>Vous pouvez ajouter un commentaire ici.</p>
+        </section>
+
+        <form  method="post" action="{{ url("comments!create") }}">
+            <textarea name="contenu" rows="5" placeholder="Contenu du commentaire"></textarea>
+            <input name="auteur" type="text" value=" {{ pseudo }}" >
+            <input name="date" type="hidden" value="{{ date()|date('Y-m-d H:i:s') }}">
+
+            <div class="btn-group">
+                <a href="{{ url('admin') }}">Quitter</a>
+                <input type="reset" value="Effacer">
+                <input type="submit" value="Ajouter">
+            </div>
+        </form>
+    </main>
+{% endblock %}
