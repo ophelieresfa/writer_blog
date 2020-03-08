@@ -34,21 +34,25 @@ class ArticlesController extends MainController
         $billet = ModelFactory::getModel('Billets')->readData($this->get->getVar('id'));
         $comments = ModelFactory::getModel('Commentaires')->listData($this->get->getVar('id'), 'id_billet');
 
+        if ($this->session->isLogged()) {
+            return $this->twig->render('comments.twig', [
+                'billet' => $billet,
+                'comments' => $comments
+            ]);
+        }
+
         return $this->twig->render('allChapters.twig', [
             'billet' => $billet,
             'comments' => $comments
         ]);
-
     }
 
     public function updateMethod()
     {
-        var_dump($this->post->postArray());
         if (!empty($this->post->postArray())) {
-            $data['id'] = $this->post->postVar('id');
             $data['titre'] = $this->post->postVar('titre');
             $data['contenu'] = $this->post->postVar('contenu');
-            $data['updated_date'] = $this->post->postVar('date');
+            $data['date_creation'] = $this->post->postVar('date');
 
             ModelFactory::getModel('Billets')->updateData($this->get->getVar('id'), $data);
             $this->redirect('admin');
