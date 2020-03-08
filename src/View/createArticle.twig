@@ -16,11 +16,11 @@
             <textarea name="contenu" rows="5" placeholder="Contenu du chapitre"></textarea>
             <input name="date" type="hidden" value="{{ date()|date('Y-m-d H:i:s') }}">
 
-            <li class="btn-group">
+            <div class="btn-group">
                 <a href="{{ url('user!login') }}">Quitter</a>
                 <input type="reset" value="Effacer">
                 <input type="submit" value="Créer">
-            </li>
+            </div>
         </form>
 
 
