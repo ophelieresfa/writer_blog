@@ -28,6 +28,8 @@
                         </p>
                         <a href="{{ url('articles!update', {'id': billet.id}) }}">Modifier</a>
                         <a href="{{ url("articles!delete", {'id': billet.id}) }}">Supprimer</a>
+                        <a href="{{ url("articles!read", {'id': billet.id}) }}">Voir les commentaires</a>
+
 
                     </section>
                 {% endfor %}
