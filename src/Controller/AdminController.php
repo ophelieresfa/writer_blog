@@ -10,7 +10,7 @@ class AdminController extends MainController
     public function startMethod()
     {
         if ($this->session->isLogged()) {
-            $pseudo = $_SESSION['user']['pseudo'];
+            $pseudo = $this->session->userVar('pseudo');
             $billets = ModelFactory::getModel('Billets')->listData();
 
             return $this->twig->render('admin.twig', [

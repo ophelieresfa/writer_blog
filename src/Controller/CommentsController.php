@@ -8,7 +8,7 @@ class CommentsController extends MainController
 {
     public function createMethod()
     {
-        $pseudo = $_SESSION['user']['pseudo'];
+        $pseudo = $this->session->userVar('pseudo');
         if (!empty($this->post->postArray())) {
             $data['contenu'] = $this->post->postVar('contenu');
             $data['auteur'] = $this->post->postVar('auteur');
