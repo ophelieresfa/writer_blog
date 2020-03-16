@@ -8,23 +8,27 @@ class CommentsController extends MainController
 {
     public function createMethod()
     {
-        $pseudo = $this->session->userVar('pseudo');
         if (!empty($this->post->postArray())) {
-            $data['contenu'] = $this->post->postVar('contenu');
-            $data['auteur'] = $this->post->postVar('auteur');
+            $data['auteur'] = $this->post->postVar('pseudo');
+            $data['contenu'] = $this->post->postVar('content');
             $data['date_commentaire'] = $this->post->postVar('date');
+            $data['id_billet'] = $this->get->getVar('id');
+            $data['id_utilisateur'] = 0;
 
             ModelFactory::getModel('Commentaires')->createData($data);
-            $this->redirect('admin');
+
+            $this->redirect('articles!read', ['id' => $this->get->getVar('id')]);
         }
-        return $this->twig->render('createComment.twig', [
-            'pseudo' => $pseudo
-        ]);
+        return $this->twig->render('allChapters.twig');
     }
 
     public function deleteMethod()
     {
-        ModelFactory::getModel('Commentaires')->deleteData($this->get->getVar('id'));
-        $this->redirect('admin');
+        ModelFactory::getModel('Commentaires')->deleteData($this->get->getVar('signal'));
+        $this->redirect('articles');
+    }
+
+    public function signalMethod()
+    {
     }
 }
