@@ -9,10 +9,14 @@ class ArticlesController extends MainController
 
     public function startMethod()
     {
+        $session = $this->session->isLogged();
+        $admin = $this->session->userVar('admin') == 1;
         $billets = ModelFactory::getModel('Billets')->listData();
 
         return $this->twig->render('chapters.twig', [
-            'billets' => $billets
+            'billets' => $billets,
+            'session' => $session,
+            'admin' => $admin
         ]);
     }
 
@@ -24,26 +28,24 @@ class ArticlesController extends MainController
             $data['date_creation'] = $this->post->postVar('date');
 
             ModelFactory::getModel('Billets')->createData($data);
-            $this->redirect('admin');
+            $this->redirect('articles');
         }
         return $this->twig->render('createArticle.twig');
     }
 
     public function readMethod()
     {
+        $session = $this->session->isLogged();
+        $admin = $this->session->userVar('admin') == 1;
+        $comments = ModelFactory::getModel('Commentaires')->listData($this->get->getVar
+        ('id'), 'id_billet');
         $billet = ModelFactory::getModel('Billets')->readData($this->get->getVar('id'));
-        $comments = ModelFactory::getModel('Commentaires')->listData($this->get->getVar('id'), 'id_billet');
-
-        if ($this->session->isLogged()) {
-            return $this->twig->render('comments.twig', [
-                'billet' => $billet,
-                'comments' => $comments
-            ]);
-        }
 
         return $this->twig->render('allChapters.twig', [
             'billet' => $billet,
-            'comments' => $comments
+            'comments' => $comments,
+            'session' =>$session,
+            'admin' => $admin
         ]);
     }
 
@@ -55,20 +57,18 @@ class ArticlesController extends MainController
             $data['date_creation'] = $this->post->postVar('date');
 
             ModelFactory::getModel('Billets')->updateData($this->get->getVar('id'), $data);
-            $this->redirect('admin');
+            $this->redirect('articles!read', ['id' => $this->get->getVar('id')]);
         }
 
         $billet = ModelFactory::getModel('Billets')->readData($this->get->getVar('id'));
         return $this->twig->render('updateArticle.twig', [
             'billet' => $billet
         ]);
-
-
     }
 
     public function deleteMethod()
     {
         ModelFactory::getModel('Billets')->deleteData($this->get->getVar('id'));
-        $this->redirect('admin');
+        $this->redirect('articles');
     }
 }
