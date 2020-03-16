@@ -12,6 +12,14 @@
             <p>Voici les chapitres du livre.</p>
         </section>
 
+        {% if session == true %}
+        {% if admin == 1 %}
+        <div class="admin_update">
+            <a href="{{ url("articles!create") }}">Ajouter un chapitre</a>
+            {% endif %}
+            {% endif %}
+        </div>
+
         <section class="tous_billets">
             {% for billet in billets [start:length] %}
                 <section class="billets">
