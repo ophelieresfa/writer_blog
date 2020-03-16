@@ -45,13 +45,13 @@ CREATE TABLE `Commentaires`
 
 INSERT INTO `Commentaires` (`contenu`, `auteur`, `date_commentaire`, `id_billet`, `id_utilisateur`) VALUES
 
-('+1 !', 'Jean Forteroche', '2010-03-25 17:12:52', 1, 2),
+('+1 !', 'Jean Forteroche', '2010-03-25 17:12:52', 1, 1),
 
 ('Excellente analyse de la situation !
 Il y arrivera plus tôt qu\'on ne le pense !', 'Jean Forteroche', '2010-03-27 22:02:13', 2, 1),
 
 ('Oui, ça commence pas très fort ce blog...', 'Jean Forteroche', '2010-03-25 16:57:16', 2, 1),
 
-('Preums !', 'Jean Forteroche', '2010-03-27 18:59:49', 1, 2),
+('Preums !', 'Jean Forteroche', '2010-03-27 18:59:49', 1, 1),
 
-('Un peu court ce billet !', 'Jean Forteroche', '2010-03-25 16:49:53', 1, 2);
+('Un peu court ce billet !', 'Jean Forteroche', '2010-03-25 16:49:53', 1, 1);
