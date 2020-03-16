@@ -25,7 +25,8 @@ class UserController extends MainController
                     $user['id'],
                     $user['pseudo'],
                     $user['email'],
-                    $user['password']
+                    $user['password'],
+                    $user['admin']
                 );
                 $this->redirect('admin');
             }
@@ -46,6 +47,8 @@ class UserController extends MainController
             $data['pseudo'] = $this->post->postVar('pseudo');
             $data['email'] = $this->post->postVar('email');
             $data['password'] = password_hash($this->post->postVar('password'), PASSWORD_DEFAULT);
+            $data['admin'] = 0;
+
 
             ModelFactory::getModel('Utilisateurs')->createData($data);
             $this->redirect('home');
