@@ -78,7 +78,7 @@ main {
     color: #4c4c4c;
     background: white;
     width: 90%;
-    padding: .5rem 0;
+    padding: .5rem 0 2rem 0;
     margin: auto;
     border: #4c4c4c solid 2px;
 }
@@ -125,8 +125,8 @@ main {
     color: #222222;
     border: 2px solid #2c9187;
     width: 60%;
-    text-align: left;
-    padding: 1rem 0 1rem 0;
+    text-align: center;
+    padding-top: 1rem;
     margin: 2rem auto;
     background-color: white;
 }
@@ -231,6 +231,14 @@ form textarea {
     padding: 1rem;
 }
 
+.add_comment h2 {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 50%;
+    margin: 2rem auto;
+    padding: 1rem;
+    text-align: center;
+}
+
 .administration {
     color: black;
     margin: auto;
@@ -245,12 +253,19 @@ div {
     margin-top: 2rem;
 }
 
+.admin_update p {
+    margin-bottom: 2rem;
+}
+
 .admin_update a {
     color: white;
     background-color: #2c5076;
     padding: 1rem;
     text-decoration: none;
+}
 
+.signal {
+    background-color: #760500 !important;
 }
 
 .quit {
@@ -260,4 +275,8 @@ div {
     padding: 1rem;
     width: 10rem;
     text-align: center;
+}
+
+.hidden {
+    display: none;
 }
