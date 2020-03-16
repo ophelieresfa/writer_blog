@@ -39,7 +39,8 @@ CREATE TABLE `Commentaires`
     `auteur`               VARCHAR(50)    NOT NULL,
     `date_commentaire`     DATETIME       NOT NULL,
     `id_billet`            SMALLINT       NOT NULL,
-    `id_utilisateur`       SMALLINT       NOT NULL
+    `id_utilisateur`       SMALLINT       NOT NULL,
+    `signal`               TINYINT(1)
 )
     ENGINE=INNODB  DEFAULT CHARSET=utf8;
 

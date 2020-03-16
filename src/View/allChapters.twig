@@ -33,6 +33,7 @@
                 <section class="chp_1">
                     <h2>Commentaires du chapitre {{ billet.id }}</h2>
                     {% for comment in comments %}
+                        {% if signal == 0 %}
                         <section class="commentaires">
                             <p>Écrit par : <span>{{ comment.auteur }}</span> :</p>
                             <p>{{ comment.contenu | nl2br}}</p>
@@ -45,6 +46,7 @@
                             {% endif %}
                             {% endif %}
                         </section>
+                        {% endif %}
                     {% endfor %}
                 </section>
         </section>
