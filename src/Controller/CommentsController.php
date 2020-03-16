@@ -24,11 +24,18 @@ class CommentsController extends MainController
 
     public function deleteMethod()
     {
-        ModelFactory::getModel('Commentaires')->deleteData($this->get->getVar('signal'));
+        ModelFactory::getModel('Commentaires')->deleteData($this->get->getVar('id'));
         $this->redirect('articles');
     }
 
     public function signalMethod()
     {
+        $data['signal'] = 1;
+
+        ModelFactory::getModel('Commentaires')->updateData($this->get->getVar('id'), $data);
+
+        $this->redirect('articles!read', ['id' => $this->get->getVar('id')]);
     }
+
+
 }
