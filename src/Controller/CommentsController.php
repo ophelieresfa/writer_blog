@@ -34,8 +34,7 @@ class CommentsController extends MainController
 
         ModelFactory::getModel('Commentaires')->updateData($this->get->getVar('id_comment'), $data);
 
-        $this->redirect('articles');
-    }
+        $this->redirect('articles');    }
 
     public function notreportMethod()
     {
