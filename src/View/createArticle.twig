@@ -11,18 +11,13 @@
             <p>Vous pouvez ajouter un chapitre ici.</p>
         </section>
 
-        <form  method="post" action="{{ url("articles!create") }}">
-            <input name="titre" type="text" placeholder="Titre">
-            <textarea name="contenu" rows="5" placeholder="Contenu du chapitre"></textarea>
+        <form  method="post" action="{{ url("articles!create") }}" >
+            <input name="titre" type="text" placeholder="Titre du chapitre" required>
+            <textarea name="contenu" rows="5" placeholder="Contenu du chapitre" required></textarea>
             <input name="date" type="hidden" value="{{ date()|date('Y-m-d H:i:s') }}">
-
-            <li class="btn-group">
-                <a href="{{ url('user!login') }}">Quitter</a>
-                <input type="reset" value="Effacer">
-                <input type="submit" value="Créer">
-            </li>
+            <input type="reset" value="Effacer">
+            <input type="submit" value="Créer">
+            <a class="quit" href="{{ url('articles') }}">Quitter</a>
         </form>
-
-
     </main>
 {% endblock %}
