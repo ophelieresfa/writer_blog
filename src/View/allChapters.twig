@@ -62,15 +62,17 @@
             <h2>Ajouter un commentaire</h2>
             <form  method="post" action="{{ url("comments!create", {'id': billet.id}) }}">
                 <input name="pseudo" type="text" placeholder="pseudo" required>
-                <textarea name="content" rows="5" placeholder="Contenu du commentaire" required></textarea>
+                <textarea name="content" rows="5" placeholder="Votre commentaire" required></textarea>
                 <input name="date" type="hidden" value="{{ date()|date('Y-m-d H:i:s') }}">
-
-                <div>
-                    <a href="{{ url('articles') }}">Quitter</a>
-                    <input type="reset" value="Effacer">
-                    <input type="submit" value="Commenter">
-                </div>
+                <input type="reset" value="Effacer">
+                <input type="submit" value="Ajouter">
+                <a class="quit" href="{{ url('articles') }}">Quitter</a>
             </form>
+
+
+
+
+
         </section>
 
     </main>
