@@ -17,7 +17,20 @@
         </section>
 
         <div class="admin_update">
-
-        </div>
+            <section class="tous_commentaires">
+                <section class="chp_1">
+                    {% for comment in comments %}
+                        {% if comment.report == 1 %}
+                            <h2>Voici les commentaires qui ont été signalés :</h2>
+                            <section class="commentaires">
+                                <p>Écrit par : <span>{{ comment.auteur }}</span> :</p>
+                                <p>{{ comment.contenu | nl2br}}</p>
+                                <p>le <span>{{ comment.date_commentaire }} :</span></p>
+                                <a href="{{ url("comments!notreport", {'id_comment': comment.id}) }}">Autorisé le commentaire</a>
+                                <a href="{{ url("comments!delete", {'id_comment': comment.id}) }}">Supprimer le commentaire</a></section>
+                        {% endif %}
+                    {% endfor %}
+                </section>
+            </section>
     </main>
 {% endblock %}
