@@ -40,14 +40,12 @@ class ArticlesController extends MainController
         $comments = ModelFactory::getModel('Commentaires')->listData($this->get->getVar
         ('id'), 'id_billet');
         $billet = ModelFactory::getModel('Billets')->readData($this->get->getVar('id'));
-        $signal = 0;
 
         return $this->twig->render('allChapters.twig', [
             'billet' => $billet,
             'comments' => $comments,
             'session' =>$session,
-            'admin' => $admin,
-            'signal' => $signal
+            'admin' => $admin
         ]);
     }
 
