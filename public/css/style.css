@@ -131,10 +131,6 @@ main {
     background-color: white;
 }
 
-.commentaires p {
-    margin-left: 2rem;
-}
-
 .tous_billets h2 {
     text-align: center;
     text-decoration: underline;
@@ -286,4 +282,13 @@ div {
     display: none;
 }
 
+.btn {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 1rem auto;
+ }
 
+.btn a {
+    margin: .2rem;
+}
