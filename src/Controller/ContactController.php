@@ -14,28 +14,26 @@ class ContactController extends MainController
 
     public function sendMethod()
     {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $nom    = htmlentities($this->post['nom']);
-            $prenom     = htmlentities($this->post['prenom']);
-            $email        = htmlentities($this->post['email']);
-            $objet  = htmlentities($this->post['objet']);
-            $message      = $this->post['message'];
+        if (!empty($this->post->postArray())) {
+            $nom = htmlentities($this->post->postVar('nom'));
+            $prenom = htmlentities($this->post->postVar('prenom'));
+            $content = htmlentities($this->post->postVar('content'));
+            $object = htmlentities($this->post->postVar('object'));
 
-            $from = $email;
-            $to = "resfa.ophelie@yahoo.fr";
+            $to      = 'resfa.ophelie@yahoo.fr';
+            $subject = 'Message de ' . $nom . ' ' . $prenom;
+            $message = $content;
 
-            $sujet = 'Message de ' . $nom . $prenom . '<'. $email . '>';
-            $contenu = $message;
+            $headers[] = 'MIME-Version: 1.0';
+            $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 
-            $header  = 'MIME-Version: 1.0'."\r\n";
-            $header .= 'Content-type: text/html; charset=utf-8'."\r\n";
-            $header .= 'From: '.$from."\r\n";
+            $headers[] = 'From: Blog - Jean Forteroche <blog@forteroche.com>';
+            $headers[] = 'Cc: ' . $object;
 
-            mail($to,$sujet,$contenu,$header);
+            mail($to, $subject, $message, implode("\r\n", $headers));
 
             $this->redirect('contact');
         }
         return $this->twig->render('home.twig');
     }
-
 }
