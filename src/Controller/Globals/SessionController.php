@@ -15,13 +15,12 @@ class SessionController
         }
     }
 
-    public function createSession(int $id, string $pseudo, string $email, string $password, int $admin)
+    public function createSession(int $id, string $pseudo, string $email, int $admin)
     {
         $_SESSION['user'] = [
             'id'    => $id,
             'pseudo'  => $pseudo,
             'email' => $email,
-            'password' => $password,
             'admin' => $admin
         ];
     }
