@@ -25,7 +25,6 @@ class UserController extends MainController
                     $user['id'],
                     $user['pseudo'],
                     $user['email'],
-                    $user['password'],
                     $user['admin']
                 );
                 $this->redirect('admin');
