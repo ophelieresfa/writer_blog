@@ -12,11 +12,11 @@
         </section>
 
         <form  method="post" action="{{ url('contact!send') }}">
-            <input name="nom" class="nom" type="text" placeholder="Nom">
-            <input name="prenom" class="prenom" type="text" placeholder="Prénom">
-            <input name="email" class="email" type="email" placeholder="Email">
-            <input name="object" class="object" type="text" placeholder="Object">
-            <textarea name="content" class="message" cols="18" rows="5" placeholder="Message"></textarea>
+            <input name="nom" class="nom" type="text" placeholder="Nom" required>
+            <input name="prenom" class="prenom" type="text" placeholder="Prénom" required>
+            <input name="email" class="email" type="email" placeholder="Email" required>
+            <input name="object" class="object" type="text" placeholder="Object" required>
+            <textarea name="content" class="message" cols="18" rows="5" placeholder="Message" required></textarea>
             <input name="submit" type="submit" value="Envoyer le message" class="submit">
         </form>
     </main>
