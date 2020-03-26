@@ -13,6 +13,8 @@ class ArticlesController extends MainController
         $admin = $this->session->userVar('admin') == 1;
         $billets = ModelFactory::getModel('Billets')->listData();
 
+        $this->session->flash();
+
         return $this->twig->render('chapters.twig', [
             'billets' => $billets,
             'session' => $session,
@@ -27,6 +29,8 @@ class ArticlesController extends MainController
             $data['contenu'] = $this->post->postVar('contenu');
             $data['date_creation'] = $this->post->postVar('date');
 
+            $this->session->setFlash('Chapitre ajouté avec succès');
+
             ModelFactory::getModel('Billets')->createData($data);
             $this->redirect('articles');
         }
@@ -40,6 +44,8 @@ class ArticlesController extends MainController
         $comments = ModelFactory::getModel('Commentaires')->listData($this->get->getVar
         ('id'), 'id_billet');
         $billet = ModelFactory::getModel('Billets')->readData($this->get->getVar('id'));
+
+        $this->session->flash();
 
         return $this->twig->render('allChapters.twig', [
             'billet' => $billet,
@@ -57,7 +63,11 @@ class ArticlesController extends MainController
             $data['date_creation'] = $this->post->postVar('date');
 
             ModelFactory::getModel('Billets')->updateData($this->get->getVar('id'), $data);
+
+            $this->session->setFlash('Chapitre Modifié avec succès');
+
             $this->redirect('articles!read', ['id' => $this->get->getVar('id')]);
+
         }
 
         $billet = ModelFactory::getModel('Billets')->readData($this->get->getVar('id'));
@@ -68,6 +78,7 @@ class ArticlesController extends MainController
 
     public function deleteMethod()
     {
+        $this->session->setFlash('Chapitre supprimé');
         ModelFactory::getModel('Billets')->deleteData($this->get->getVar('id'));
         $this->redirect('articles');
     }
