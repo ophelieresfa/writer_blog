@@ -15,8 +15,9 @@ class CommentsController extends MainController
             $data['id_billet'] = $this->get->getVar('id');
             $data['id_utilisateur'] = 0;
 
-            ModelFactory::getModel('Commentaires')->createData($data);
+            $this->session->setFlash('Commentaire ajouté');
 
+            ModelFactory::getModel('Commentaires')->createData($data);
             $this->redirect('articles!read', ['id' => $this->get->getVar('id')]);
         }
         return $this->twig->render('allChapters.twig');
@@ -24,6 +25,8 @@ class CommentsController extends MainController
 
     public function deleteMethod()
     {
+        $this->session->setFlash('Commentaire supprimé avec succès');
+
         ModelFactory::getModel('Commentaires')->deleteData($this->get->getVar('id_comment'));
         $this->redirect('articles');
     }
@@ -31,6 +34,8 @@ class CommentsController extends MainController
     public function reportMethod()
     {
         $data['report'] = 1;
+
+        $this->session->setFlash('Le commentaire a bien été signalé');
 
         ModelFactory::getModel('Commentaires')->updateData($this->get->getVar('id_comment'), $data);
 
