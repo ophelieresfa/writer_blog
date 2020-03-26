@@ -9,6 +9,7 @@ class ContactController extends MainController
 
     public function startMethod()
     {
+        $this->session->flash();
         return $this->twig->render('contact.twig');
     }
 
@@ -32,6 +33,8 @@ class ContactController extends MainController
             $headers[] = 'To: ' . $nom . $prenom . '<' . $email .'>';
 
             mail($to, $subject, $message, implode("\r\n", $headers));
+
+            $this->session->setFlash('Message envoyé');
 
             $this->redirect('contact');
         }
