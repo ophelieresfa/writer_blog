@@ -63,4 +63,15 @@ class SessionController
         }
         return $this->user[$var];
     }
+
+    public function setFlash(string $message)
+    {
+        $_SESSION['alert'] = $message;
+    }
+
+    public function flash()
+    {
+        echo $_SESSION['alert'];
+        unset($_SESSION['alert']);
+    }
 }
