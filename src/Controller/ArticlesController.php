@@ -29,7 +29,7 @@ class ArticlesController extends MainController
             $data['contenu'] = $this->post->postVar('contenu');
             $data['date_creation'] = $this->post->postVar('date');
 
-            $this->session->setFlash('Chapitre ajouté avec succès');
+            $this->session->setFlash('Le chapitre a été ajouté avec succès.', 'success');
 
             ModelFactory::getModel('Billets')->createData($data);
             $this->redirect('articles');
@@ -64,7 +64,7 @@ class ArticlesController extends MainController
 
             ModelFactory::getModel('Billets')->updateData($this->get->getVar('id'), $data);
 
-            $this->session->setFlash('Chapitre Modifié avec succès');
+            $this->session->setFlash('Le chapitre a été modifié avec succès', 'success');
 
             $this->redirect('articles!read', ['id' => $this->get->getVar('id')]);
 
@@ -72,13 +72,13 @@ class ArticlesController extends MainController
 
         $billet = ModelFactory::getModel('Billets')->readData($this->get->getVar('id'));
         return $this->twig->render('updateArticle.twig', [
-            'billet' => $billet
-        ]);
+        'billet' => $billet
+    ]);
     }
 
     public function deleteMethod()
     {
-        $this->session->setFlash('Chapitre supprimé');
+        $this->session->setFlash('Le chapitre à été supprimé', 'success');
         ModelFactory::getModel('Billets')->deleteData($this->get->getVar('id'));
         $this->redirect('articles');
     }
