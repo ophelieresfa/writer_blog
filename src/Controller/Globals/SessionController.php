@@ -64,14 +64,23 @@ class SessionController
         return $this->user[$var];
     }
 
-    public function setFlash(string $message)
+    public function setFlash(string $message, $type = 'info')
     {
-        $_SESSION['alert'] = $message;
+        $_SESSION['alert'] = array(
+            'message' => $message,
+            'type'    => $type
+        );
     }
 
     public function flash()
     {
-        echo $_SESSION['alert'];
-        unset($_SESSION['alert']);
+        if (isset($_SESSION['alert'])) {
+            ?>
+            <div class="alert alert-<?php echo $_SESSION['alert']['type']; ?>">
+                <?php echo $_SESSION['alert']['message']; ?>
+            </div>
+            <?php
+            unset($_SESSION['alert']);
+        }
     }
 }

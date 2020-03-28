@@ -15,7 +15,7 @@ class CommentsController extends MainController
             $data['id_billet'] = $this->get->getVar('id');
             $data['id_utilisateur'] = 0;
 
-            $this->session->setFlash('Commentaire ajouté');
+            $this->session->setFlash('Le commentaire a été ajouté avec succès', 'success');
 
             ModelFactory::getModel('Commentaires')->createData($data);
             $this->redirect('articles!read', ['id' => $this->get->getVar('id')]);
@@ -25,7 +25,7 @@ class CommentsController extends MainController
 
     public function deleteMethod()
     {
-        $this->session->setFlash('Commentaire supprimé avec succès');
+        $this->session->setFlash('Le commentaire a été supprimé', 'success');
 
         ModelFactory::getModel('Commentaires')->deleteData($this->get->getVar('id_comment'));
         $this->redirect('articles');
@@ -35,11 +35,12 @@ class CommentsController extends MainController
     {
         $data['report'] = 1;
 
-        $this->session->setFlash('Le commentaire a bien été signalé');
+        $this->session->setFlash('Le commentaire a été signalé', 'success');
 
         ModelFactory::getModel('Commentaires')->updateData($this->get->getVar('id_comment'), $data);
 
-        $this->redirect('articles');    }
+        $this->redirect('articles');
+    }
 
     public function notreportMethod()
     {

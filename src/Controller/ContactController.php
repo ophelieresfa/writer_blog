@@ -34,7 +34,7 @@ class ContactController extends MainController
 
             mail($to, $subject, $message, implode("\r\n", $headers));
 
-            $this->session->setFlash('Message envoyé');
+            $this->session->setFlash('Votre message a été envoyé avec succès', 'success');
 
             $this->redirect('contact');
         }
