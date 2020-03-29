@@ -4,6 +4,11 @@ namespace App\Controller;
 
 use App\Model\Factory\ModelFactory;
 
+/**
+ * Class AdminController
+ * @package App\Controller
+ */
+
 class AdminController extends MainController
 {
 

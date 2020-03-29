@@ -4,6 +4,11 @@ namespace App\Controller;
 
 use App\Model\Factory\ModelFactory;
 
+/**
+ * Class CommentsController
+ * @package App\Controller
+ */
+
 class CommentsController extends MainController
 {
     public function createMethod()

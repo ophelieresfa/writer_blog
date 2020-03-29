@@ -4,6 +4,11 @@ namespace App\Controller;
 
 use App\Model\Factory\ModelFactory;
 
+/**
+ * Class UserController
+ * @package App\Controller
+ */
+
 class UserController extends MainController
 {
 

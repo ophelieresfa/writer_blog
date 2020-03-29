@@ -4,6 +4,11 @@ namespace App\Controller;
 
 use App\Model\Factory\ModelFactory;
 
+/**
+ * Class ContactController
+ * @package App\Controller
+ */
+
 class ContactController extends MainController
 {
 
