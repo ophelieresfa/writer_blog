@@ -4,6 +4,11 @@ namespace App\Model\Factory;
 
 use App\Model\PdoDb;
 
+/**
+ * Class ModelFactory
+ * @package App\Model
+ */
+
 class ModelFactory
 {
     private static $models = [];
