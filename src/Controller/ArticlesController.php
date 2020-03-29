@@ -11,12 +11,12 @@ class ArticlesController extends MainController
     {
         $session = $this->session->isLogged();
         $admin = $this->session->userVar('admin') == 1;
-        $billets = ModelFactory::getModel('Billets')->listData();
+        $posts = ModelFactory::getModel('Billets')->listData();
 
         $this->session->flash();
 
         return $this->twig->render('chapters.twig', [
-            'billets' => $billets,
+            'posts' => $posts,
             'session' => $session,
             'admin' => $admin
         ]);
@@ -43,12 +43,12 @@ class ArticlesController extends MainController
         $admin = $this->session->userVar('admin') == 1;
         $comments = ModelFactory::getModel('Commentaires')->listData($this->get->getVar
         ('id'), 'id_billet');
-        $billet = ModelFactory::getModel('Billets')->readData($this->get->getVar('id'));
+        $post = ModelFactory::getModel('Billets')->readData($this->get->getVar('id'));
 
         $this->session->flash();
 
         return $this->twig->render('allChapters.twig', [
-            'billet' => $billet,
+            'post' => $post,
             'comments' => $comments,
             'session' =>$session,
             'admin' => $admin
@@ -70,9 +70,9 @@ class ArticlesController extends MainController
 
         }
 
-        $billet = ModelFactory::getModel('Billets')->readData($this->get->getVar('id'));
+        $post = ModelFactory::getModel('Billets')->readData($this->get->getVar('id'));
         return $this->twig->render('updateArticle.twig', [
-        'billet' => $billet
+        'post' => $post
     ]);
     }
 

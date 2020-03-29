@@ -8,25 +8,25 @@
     <main class="white">
         <section class="introduction bck-white black">
             <h1>Billet pour l'Alaska</h1>
-            <p>Voici le chapitre {{ billet.id }}.</p>
+            <p>Voici le chapitre {{ post.id }}.</p>
         </section>
 
         <section class="post">
-            <h2>{{ billet.titre }}</h2>
-            <p>{{ billet.contenu }}</p>
+            <h2>{{ post.titre }}</h2>
+            <p>{{ post.contenu }}</p>
 
             <div>
                 {% if session == true %}
                     {% if admin == 1 %}
-                        <a class="white btn-chap" href="{{ url('articles!update', {'id': billet.id}) }}">Modifier</a>
-                        <a class="white btn-chap" href="{{ url("articles!delete", {'id': billet.id}) }}">Supprimer</a>
+                        <a class="white btn-chap" href="{{ url('articles!update', {'id': post.id}) }}">Modifier</a>
+                        <a class="white btn-chap" href="{{ url("articles!delete", {'id': post.id}) }}">Supprimer</a>
                     {% endif %}
                 {% endif %}
             </div>
         </section>
 
         <section class="all-comments">
-                <h2>Commentaires du chapitre {{ billet.id }}</h2>
+                <h2>Commentaires du chapitre {{ post.id }}</h2>
                 {% for comment in comments %}
                     <section class="comments bck-white">
                         <h3>Écrit par : <span>{{ comment.auteur }}</span> :</h3>
@@ -55,7 +55,7 @@
 
         <section class="add-comment">
             <h2>Ajouter un commentaire</h2>
-            <form  method="post" action="{{ url("comments!create", {'id': billet.id}) }}">
+            <form  method="post" action="{{ url("comments!create", {'id': post.id}) }}">
                 <input name="pseudo" type="text" placeholder="pseudo" required>
                 <textarea name="content" rows="5" placeholder="Votre commentaire" required></textarea>
                 <input name="date" type="hidden" value="{{ date()|date('Y-m-d H:i:s') }}">

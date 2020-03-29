@@ -7,17 +7,17 @@
 {% block main %}
     <main class="white">
         <section class="introduction bck-white black">
-            <h1>Modifier le chapitre {{ billet.id}}</h1>
+            <h1>Modifier le chapitre {{ post.id}}</h1>
             <p>Vous pouvez modifier le chapitre ici.</p>
         </section>
 
-        <form  method="post" action="{{ url("articles!update", {'id': billet.id}) }}" >
-            <input name="titre" type="text" value="{{billet.titre}}">
-            <textarea name="contenu" rows="5">{{billet.contenu}}</textarea>
+        <form  method="post" action="{{ url("articles!update", {'id': post.id}) }}" >
+            <input name="titre" type="text" value="{{post.titre}}">
+            <textarea name="contenu" rows="5">{{post.contenu}}</textarea>
             <input name="date" type="hidden" value="{{ date()|date('Y-m-d H:i:s') }}">
             <input type="reset" value="Effacer">
             <input type="submit" value="Modifier">
-            <a class="btn-quit white bck-black" href="{{ url("articles!read", {'id': billet.id}) }}">Quitter</a>
+            <a class="btn-quit white bck-black" href="{{ url("articles!read", {'id': post.id}) }}">Quitter</a>
         </form>
     </main>
 {% endblock %}

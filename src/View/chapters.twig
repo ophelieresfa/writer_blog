@@ -18,11 +18,11 @@
         {% endif %}
         {% endif %}
 
-        {% for billet in billets [start:length] %}
+        {% for post in posts [start:length] %}
             <section class="full-billet bck-white black">
-                <h2>{{ billet.titre }}</h2>
-                <p>{{ billet.contenu[:700] }} ...</p>
-                <a class="acces-chap white bck-black" href="{{ url('articles!read', {'id': billet.id}, {'id': commentaire.id_billet})}}">Accéder au chapitre</a>
+                <h2>{{ post.titre }}</h2>
+                <p>{{ post.contenu[:700] }} ...</p>
+                <a class="acces-chap white bck-black" href="{{ url('articles!read', {'id': post.id}, {'id': commentaire.id_billet})}}">Accéder au chapitre</a>
             </section>
         {% endfor %}
     </main>
