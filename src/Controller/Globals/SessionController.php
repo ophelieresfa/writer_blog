@@ -41,6 +41,20 @@ class SessionController
         return false;
     }
 
+    public function sessionArray()
+    {
+        return $this->session;
+    }
+
+    public function userArray()
+    {
+        if ($this->isLogged() === false)
+        {
+            $this->user = [];
+        }
+        return $this->user;
+    }
+
     public function userVar($var)
     {
         if ($this->isLogged() === false)
