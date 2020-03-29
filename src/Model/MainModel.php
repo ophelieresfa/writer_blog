@@ -2,6 +2,11 @@
 
 namespace App\Model;
 
+/**
+ * Class MainModel
+ * @package App\Model
+ */
+
 abstract class MainModel
 {
     protected $database = null;
