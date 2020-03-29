@@ -5,6 +5,11 @@ namespace App\Controller\Extention;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
+/**
+ * Class Extention
+ * @package App\Controller
+ */
+
 class Extention extends AbstractExtension
 {
     private $session = null;
