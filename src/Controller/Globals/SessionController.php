@@ -41,20 +41,6 @@ class SessionController
         return false;
     }
 
-    public function sessionArray()
-    {
-        return $this->session;
-    }
-
-    public function userArray()
-    {
-        if ($this->isLogged() === false)
-        {
-            $this->user = [];
-        }
-        return $this->user;
-    }
-
     public function userVar($var)
     {
         if ($this->isLogged() === false)
@@ -66,7 +52,7 @@ class SessionController
 
     public function setFlash(string $message, $type)
     {
-        $_SESSION['alert'] = array(
+        $_SESSION['flash'] = array(
             'message' => $message,
             'type'    => $type
         );
@@ -74,13 +60,13 @@ class SessionController
 
     public function flash()
     {
-        if (isset($_SESSION['alert'])) {
+        if (isset($_SESSION['flash'])) {
             ?>
-            <div class="flash flash-<?php echo $_SESSION['alert']['type']; ?>">
-                <?php echo $_SESSION['alert']['message']; ?>
+            <div class="flash flash-<?php echo $_SESSION['flash']['type']; ?>">
+                <?php echo $_SESSION['flash']['message']; ?>
             </div>
             <?php
-            unset($_SESSION['alert']);
+            unset($_SESSION['flash']);
         }
     }
 }
