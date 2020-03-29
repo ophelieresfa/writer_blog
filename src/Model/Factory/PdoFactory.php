@@ -4,6 +4,11 @@ namespace App\Model\Factory;
 
 use PDO;
 
+/**
+ * Class PdoFactory
+ * @package App\Model
+ */
+
 class PdoFactory
 {
     private static $pdo = null;
