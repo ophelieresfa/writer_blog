@@ -6,6 +6,11 @@ use App\Controller\Extention\Extention;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
+/**
+ * Class MainController
+ * @package App\Controller
+ */
+
 abstract class MainController extends GlobalController
 {
     protected $twig = null;
