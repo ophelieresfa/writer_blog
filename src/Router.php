@@ -2,6 +2,11 @@
 
 namespace App;
 
+/**
+ * Class Router
+ * @package App
+ */
+
 class Router
 {
 
