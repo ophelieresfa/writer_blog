@@ -12,6 +12,7 @@ class UserController extends MainController
         if (!empty($this->session->isLogged())) {
             return $this->twig->render('admin.twig');
         }
+        $this->session->flash();
         return $this->twig->render('consub.twig');
     }
 
@@ -29,6 +30,8 @@ class UserController extends MainController
                 );
                 $this->redirect('admin');
             }
+            $this->session->setFlash('Connexion échouée : Email ou mot de passe invalide', 'error');
+            $this->redirect('admin');
         }
         return $this->twig->render('connection.twig');
     }
@@ -48,9 +51,15 @@ class UserController extends MainController
             $data['password'] = password_hash($this->post->postVar('password'), PASSWORD_DEFAULT);
             $data['admin'] = 0;
 
+            $user = ModelFactory::getModel('Utilisateurs')->readData($this->post->postVar('email'), 'email');
 
-            ModelFactory::getModel('Utilisateurs')->createData($data);
-            $this->redirect('home');
+            if ($this->post->postVar('email') !== $user['email']) {
+                ModelFactory::getModel('Utilisateurs')->createData($data);
+                $this->session->setFlash('Votre inscription a été enregistrée', 'success');
+                $this->redirect('home');
+            }
+            $this->session->setFlash('Votre inscription n\'a pas été enregistrée car vous avez déjà un compte avec cette adresse mail', 'error');
+            $this->redirect('admin');
         }
         return $this->twig->render('subscribe.twig');
     }
