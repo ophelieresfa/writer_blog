@@ -7,31 +7,23 @@
 
 {% block main %}
     <main class="white">
-        <section class="introduction">
+        <section class="introduction bck-white black">
             <h1>Billet pour l'Alaska</h1>
             <p>Voici les chapitres du livre.</p>
         </section>
 
         {% if session == true %}
         {% if admin == 1 %}
-        <div class="admin_update">
-            <a href="{{ url("articles!create") }}">Ajouter un chapitre</a>
-            {% endif %}
-            {% endif %}
-        </div>
+            <a class="white btn-chap" href="{{ url("articles!create") }}">Ajouter un chapitre</a>
+        {% endif %}
+        {% endif %}
 
-        <section class="tous_billets">
-            {% for billet in billets [start:length] %}
-                <section class="billets">
-                    <h2>
-                        {{ billet.titre }}
-                    </h2>
-                    <p>
-                        {{ billet.contenu[:700] }} ...
-                    </p>
-                    <a class="link_comments" href="{{ url('articles!read', {'id': billet.id}, {'id': commentaire.id_billet})}}">Accéder au chapitre</a>
-                </section>
-            {% endfor %}
-        </section>
+        {% for billet in billets [start:length] %}
+            <section class="full-billet bck-white black">
+                <h2>{{ billet.titre }}</h2>
+                <p>{{ billet.contenu[:700] }} ...</p>
+                <a class="acces-chap white bck-black" href="{{ url('articles!read', {'id': billet.id}, {'id': commentaire.id_billet})}}">Accéder au chapitre</a>
+            </section>
+        {% endfor %}
     </main>
 {% endblock %}

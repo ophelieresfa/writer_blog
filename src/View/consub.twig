@@ -6,13 +6,21 @@
 
 {% block main %}
     <main class="white">
-        <section class="introduction">
+        <section class="introduction bck-white black">
             <h1>Connectez-vous ou inscrivez-vous pour accéder à l'espace d'administration.</h1>
         </section>
 
         <ul class="consub">
-            <a href="{{ url('user!login') }}"><li><i class="fas fa-mouse"></i>Connexion</li></a>
-            <a href="{{ url('user!create') }}"><li><i class="fas fa-mouse"></i>Inscription</li></a>
+            <a href="{{ url('user!login') }}">
+                <li class="white bck-black">
+                    <i class="white fas fa-mouse"></i>Connexion
+                </li>
+            </a>
+            <a href="{{ url('user!create') }}">
+                <li class="white bck-black">
+                    <i class="white fas fa-mouse"></i>Inscription
+                </li>
+            </a>
         </ul>
     </main>
 {% endblock %}

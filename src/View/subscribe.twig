@@ -7,18 +7,22 @@
 
 {% block main %}
     <main class="white">
-        <section class="introduction">
+        <section class="introduction bck-white black">
             <h1>Inscription</h1>
             <p>Inscrivez-vous pour accéder à l'espace d'administration.</p>
         </section>
 
-        <form id="signup" class="subscribe!create" method="post" action="{{ url('user!create') }}" enctype="multipart/form-data">
+        <form id="signup" method="post" action="{{ url('user!create') }}" enctype="multipart/form-data">
             <input name="pseudo" class="pseudo" type="text" placeholder="Pseudo" required>
             <input name="email" class="email" type="email" placeholder="Email" required>
             <input name="password" class="password" type="password" placeholder="Mot de passe" required>
-            <a class="link_other" href="{{ url('user!create') }}"><button class="other" type="submit">S'inscrire</button></a>
-            <p class="or">ou</p>
-            <a class="link_other" href="{{ url('user!login') }}"><button class="other" type="button">Se connecter</button></a>
+            <a href="{{ url('user!create') }}">
+                <button class="link-connect" type="submit">S'inscrire</button>
+            </a>
+            <p class="or black">ou</p>
+            <a href="{{ url('user!login') }}">
+                <button class="link-sub" type="button">Se connecter</button>
+            </a>
         </form>
     </main>
 {% endblock %}
