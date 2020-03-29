@@ -6,28 +6,26 @@
 
 {% block main %}
     <main class="white">
-        <section class="introduction">
+        <section class="introduction bck-white black">
             <h1>Bienvenue sur mon blog</h1>
             <p>Je publierais chapitre par chapitre mon nouveau roman "Billet pour l'Alaska".</p>
         </section>
 
         <p class="info">Voici le premier chapitre, accédez aux prochains chapitres dans le menu "Chapitres" :</p>
 
-        <section class="premier_billet">
+        <section class="post bck-white">
             {% for billet in lastBillet [start:length] %}
                 {% if billet.id == 1 %}
-                    <h2>
-                        {{ billet.titre }}
-                    </h2>
-                    <p>
-                        {{ billet.contenu[:780]}} ...
-                    </p>
+                    <h2>{{ billet.titre }}</h2>
+                    <p>{{ billet.contenu[:780]}} ...</p>
                 {% endif %}
             {% endfor %}
         </section>
 
-        <div class="more_chapters">
-            <a href="{{ url('articles') }}"><button>Voir plus de chapitres ...</button></a>
+        <div class="more-chapters">
+            <a href="{{ url('articles') }}">
+                <button class="white bck-black">Voir plus de chapitres ...</button>
+            </a>
         </div>
     </main>
 {% endblock %}

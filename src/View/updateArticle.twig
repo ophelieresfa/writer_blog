@@ -6,7 +6,7 @@
 
 {% block main %}
     <main class="white">
-        <section class="introduction">
+        <section class="introduction bck-white black">
             <h1>Modifier le chapitre {{ billet.id}}</h1>
             <p>Vous pouvez modifier le chapitre ici.</p>
         </section>
@@ -17,7 +17,7 @@
             <input name="date" type="hidden" value="{{ date()|date('Y-m-d H:i:s') }}">
             <input type="reset" value="Effacer">
             <input type="submit" value="Modifier">
-            <a class="quit" href="{{ url("articles!read", {'id': billet.id}) }}">Quitter</a>
+            <a class="btn-quit white bck-black" href="{{ url("articles!read", {'id': billet.id}) }}">Quitter</a>
         </form>
     </main>
 {% endblock %}

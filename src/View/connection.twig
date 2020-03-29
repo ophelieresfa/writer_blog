@@ -6,7 +6,7 @@
 
 {% block main %}
     <main class="white">
-        <section class="introduction">
+        <section class="introduction bck-white black">
             <h1>Connexion</h1>
             <p>Connectez-vous pour accéder à l'espace d'administration.</p>
         </section>
@@ -14,9 +14,13 @@
         <form class="connection"  method="post" action="{{ url('user!login') }}">
             <input name="email" class="email" type="email" placeholder="Email" required>
             <input name="password" class="password" type="password" placeholder="Mot de passe" required>
-            <a class="link_other" href="{{ url('user!login') }}"><button class="other" type="submit">Se connecter</button></a>
-            <p class="or">ou</p>
-            <a class="link_other" href="{{ url('user!create') }}"><button class="other" type="button">S'inscrire</button></a>
+            <a href="{{ url('user!login') }}">
+                <button class="link-connect" type="submit">Se connecter</button>
+            </a>
+            <p class="or black">ou</p>
+            <a href="{{ url('user!create') }}">
+                <button class="link-sub" type="button">S'inscrire</button>
+            </a>
         </form>
     </main>
 {% endblock %}

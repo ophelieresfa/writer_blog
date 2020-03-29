@@ -1,14 +1,14 @@
-.white {
-    color: white;
-}
-
-ul {
-    margin-left: -40px;
-}
+/**/
+/* Body */
+/**/
 
 body {
     background-color: #f3f6f9;
 }
+
+/**/
+/* Menu de navigation */
+/**/
 
 nav {
     padding: .5rem;
@@ -18,130 +18,219 @@ nav {
     background: linear-gradient(90deg, black, #3b3b3b) ;
 }
 
-nav li {
+nav ul li {
     list-style-type: none;
     text-align: center;
     padding: .2rem;
 }
 
-nav li a:hover {
+nav ul li a:hover {
     color: #2c9187;
     text-decoration: underline;
 }
 
-nav a{
-    color: white;
+nav ul li a {
     text-decoration: none;
 }
+
+/**/
+/* Header de la page */
+/**/
 
 header h1 {
     background-color: rgba(44, 145, 135, 0.8);
     margin: 1rem auto;
     padding: 2rem;
-    color: white;
     text-align: center;
-    font-family: 'Amatic SC', cursive, 'sans-serif';}
+    font-family: 'Amatic SC', cursive, 'sans-serif';
+}
+
+/**/
+/* Contenu des pages  */
+/**/
 
 main {
     font-family: 'Neucha', cursive, 'sans-serif';
+    margin: auto;
+    text-align: center;
 }
 
-.introduction {
-    color: black;
+div {
     text-align: center;
+}
+
+ul {
+    margin-left: -40px;
+}
+
+.white {
+    color: white;
+}
+
+.bck-white {
+    background-color: white;
+}
+
+.black {
+    color: black;
+}
+
+.bck-black {
+    background-color: black;
+}
+
+.hidden {
+    display: none;
+}
+
+.al-cent {
+    text-align: center;
+}
+
+/**/
+/* Introduction */
+/**/
+
+.introduction {
+    font-size: 1rem;
     border: 4px solid #2c9187;
     padding: 1rem;
     width: 85%;
     margin: 2rem auto;
-    background-color: white;
-}
-
-.introduction {
-    font-size: 1rem;
 }
 
 .introduction h1 {
     color: #91243b;
-
 }
 
 .introduction p {
     font-size: 1rem;
 }
 
+/**/
+/* Page d'accueil */
+/**/
+
 .info {
     color: #2c9187;
-    text-align: center;
 }
 
-.premier_billet {
+.post {
     color: #4c4c4c;
-    background: white;
     width: 90%;
     padding: .5rem 0 2rem 0;
     margin: auto;
     border: #4c4c4c solid 2px;
 }
 
-.premier_billet h2 {
-    text-align: center;
+.post h2 {
     text-decoration: underline;
 }
 
-.premier_billet p {
+.post p {
     text-align: justify;
     margin: 3rem;
 }
 
-.more_chapters {
-    text-align: center;
-}
-
-.more_chapters a button {
+.more-chapters a button {
     font-family: 'Neucha', cursive, 'sans-serif';
     font-size: .9rem;
+    margin: 3rem auto;
+    padding: 1rem;
+    width: 40%;
 }
 
-.more_chapters a button:hover {
+.more-chapters a button:hover {
     color: #2c9187;
     cursor: pointer;
 }
 
-.tous_billets,
-.tous_commentaires {
-    text-align: center;
+/**/
+/* Page liste des chapitres */
+/**/
+
+.btn-chap {
+    background-color: #2c5076;
+    padding: 1rem;
+    text-decoration: none;
 }
 
-.tous_billets .billets {
-    color: black;
-    background: white;
+.full-billet {
     width: 90%;
     padding: 1rem 0 3rem 0;
     margin: 2rem auto;
     border: #4c4c4c solid 2px;
 }
 
-.tous_commentaires .commentaires {
-    color: #222222;
-    border: 2px solid #2c9187;
-    width: 60%;
-    text-align: center;
-    padding-top: 1rem;
-    margin: 2rem auto;
-    background-color: white;
-}
-
-.tous_billets h2 {
-    text-align: center;
+.full-billet h2 {
     text-decoration: underline;
 }
 
-.tous_billets p {
+.full-billet p {
     text-align: justify;
     margin: 3rem;
 }
 
-/* */
+.acces-chap {
+    text-decoration: none;
+    padding: 1rem;
+}
+
+.acces-chap:hover {
+    color: #2c9187;
+}
+
+/**/
+/* Page du chapitre entier et les commentaires associés */
+/**/
+
+.post div {
+    margin-top: 2rem;
+}
+
+.all-comments h2 {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 50%;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.comments {
+    color: #222222;
+    border: 2px solid #2c9187;
+    width: 60%;
+    padding-top: 1rem;
+    margin: 2rem auto;
+}
+
+.comments p {
+    margin-bottom: 2rem;
+}
+
+.comments a {
+    background-color: #2c5076;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+.btn-signal {
+    background-color: #760500 !important;
+}
+
+/**/
+/* Ajout d'un commentaire */
+/**/
+
+.add-comment h2 {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 50%;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+/**/
+/* Formulaires */
+/**/
 
 form {
     display: flex;
@@ -161,143 +250,80 @@ form a {
     text-decoration: none;
 }
 
+/**/
+/* Page Connexion / Inscription */
+/**/
+
 .consub {
-    color: black;
-    text-align: center;
     list-style-type: none;
     font-size: 1.1rem;
-}
-
-.consub li,
-.more_chapters button {
-    margin: 3rem auto;
-    padding: 1rem;
-    background-color: black;
-    color: white;
-    width: 40%;
-}
-
-.consub li:hover {
-    color: #2c9187;
-    text-decoration: underline #2c9187;
-}
-
-.consub i {
-    margin-right: 1rem;
-    color: white;
 }
 
 .consub a {
     text-decoration: none;
 }
 
-.connection p,
-.subscribe p {
-    color: black;
-    text-align: center;
-    text-decoration: underline;
+.consub li {
+    margin: 3rem auto;
+    padding: 1rem;
+    width: 40%;
 }
 
-.link_other {
-    margin: auto;
+.consub li:hover {
+    color: #2c9187;
 }
 
-.other{
+.consub i {
+    margin-right: 1rem;
+}
+
+/**/
+/* Page de connexion et page d'inscription  */
+/**/
+
+.link-connect,
+.link-disconned,
+.link-sub {
     padding: 1rem;
     font-size: 1rem;
 }
 
-.link_comments {
-    text-decoration: none;
-    color: white;
-    background-color: black;
-    padding: 1rem;
-}
-
 .or {
-    color: black;
-    text-align: center;
     text-decoration: underline;
 }
 
-.link_comments:hover {
-    color: #2c9187;
-}
-
-.chp_1 h2,
-.chp_2 h2 {
-    background-color: rgba(0, 0, 0, 0.8);
-    width: 50%;
-    margin: 2rem auto;
-    padding: 1rem;
-}
-
-.add_comment h2 {
-    background-color: rgba(0, 0, 0, 0.8);
-    width: 50%;
-    margin: 2rem auto;
-    padding: 1rem;
-    text-align: center;
-}
+/**/
+/* Page d'administration */
+/**/
 
 .administration {
-    color: black;
     margin: auto;
-    text-align: center;
 }
 
-div {
-    text-align: center;
+.administration h2 {
+    font-size: 1.2rem;
 }
 
-.admin_update {
-    margin-top: 2rem;
-}
+/**/
+/* Modération des commentaires*/
+/**/
 
-.admin_update p {
-    margin-bottom: 2rem;
-}
-
-.admin_update a {
-    color: white;
-    background-color: #2c5076;
-    padding: 1rem;
-    text-decoration: none;
-}
-
-.signal {
-    background-color: #760500 !important;
-}
-
-.quit {
-    margin: auto;
-    background-color: black;
-    color: white;
-    padding: 1rem;
-    width: 10rem;
-    text-align: center;
-}
-
-.hidden {
-    display: none;
-}
-
-.btn {
+.btn-comments {
     display: flex;
     flex-direction: column;
     width: 70%;
     margin: 1rem auto;
- }
+}
 
-.btn a {
+.btn-comments a {
     margin: .2rem;
 }
 
-#text {
-    color: #760500;
-}
+/**/
+/* Messages flash */
+/**/
 
-.alert {
+.flash {
     position: relative;
     padding: .75rem 1.25rem;
     border: 1px solid transparent;
@@ -306,8 +332,18 @@ div {
     font-family: 'Neucha', cursive, 'sans-serif';
 }
 
-.alert-success {
+.flash-success {
     color: black;
     background-color: rgba(44, 145, 135, 0.68);
     border-color: #c3e6cb;
+}
+
+/**/
+/* Bouton quitter */
+/**/
+
+.btn-quit {
+    margin: auto;
+    padding: 1rem;
+    width: 10rem;
 }

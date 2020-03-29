@@ -76,7 +76,7 @@ class SessionController
     {
         if (isset($_SESSION['alert'])) {
             ?>
-            <div class="alert alert-<?php echo $_SESSION['alert']['type']; ?>">
+            <div class="flash flash-<?php echo $_SESSION['alert']['type']; ?>">
                 <?php echo $_SESSION['alert']['message']; ?>
             </div>
             <?php
