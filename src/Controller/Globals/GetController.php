@@ -2,6 +2,11 @@
 
 namespace App\Controller\Globals;
 
+/**
+ * Class GetController
+ * @package App\Controller
+*/
+
 class GetController
 {
     private $get = null;
