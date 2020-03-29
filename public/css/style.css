@@ -338,6 +338,12 @@ form a {
     border-color: #c3e6cb;
 }
 
+.flash-error {
+    color: white;
+    background-color: rgba(118, 5, 0, 0.71);
+    border-color: #c3e6cb;
+}
+
 /**/
 /* Bouton quitter */
 /**/
