@@ -11,6 +11,8 @@ class HomeController extends MainController
     {
         $lastBillet = ModelFactory::getModel('Billets')->listData();
 
+        $this->session->flash();
+
         return $this->twig->render('home.twig', [
             'lastBillet' => $lastBillet
         ]);
