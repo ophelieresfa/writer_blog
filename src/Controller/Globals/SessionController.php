@@ -64,7 +64,7 @@ class SessionController
         return $this->user[$var];
     }
 
-    public function setFlash(string $message, $type = 'info')
+    public function setFlash(string $message, $type)
     {
         $_SESSION['alert'] = array(
             'message' => $message,
