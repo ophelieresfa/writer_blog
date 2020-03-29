@@ -6,6 +6,11 @@ use App\Controller\Globals\GetController;
 use App\Controller\Globals\PostController;
 use App\Controller\Globals\SessionController;
 
+/**
+ * Class GlobalController
+ * @package App\Controller
+ */
+
 abstract class GlobalController
 {
     protected $get = null;

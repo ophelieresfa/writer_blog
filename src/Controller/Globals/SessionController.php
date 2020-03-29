@@ -2,6 +2,11 @@
 
 namespace App\Controller\Globals;
 
+/**
+ * Class SessionController
+ * @package App\Controller
+ */
+
 class SessionController
 {
     private $session = null;

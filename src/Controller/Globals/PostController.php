@@ -2,6 +2,11 @@
 
 namespace App\Controller\Globals;
 
+/**
+ * Class PostController
+ * @package App\Controller
+ */
+
 class PostController
 {
     private $post = null;
