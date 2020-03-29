@@ -4,6 +4,11 @@ namespace App\Model;
 
 use PDO;
 
+/**
+ * Class PdoDb
+ * @package App\Model
+ */
+
 class PdoDb
 {
     private $pdo = null;
