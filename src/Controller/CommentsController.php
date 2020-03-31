@@ -30,9 +30,9 @@ class CommentsController extends MainController
 
     public function deleteMethod()
     {
-        $this->session->setFlash('Le commentaire a été supprimé', 'success');
 
         ModelFactory::getModel('Commentaires')->deleteData($this->get->getVar('id_comment'));
+        $this->session->setFlash('Le commentaire a été supprimé', 'success');
         $this->redirect('articles');
     }
 

@@ -83,8 +83,12 @@ class ArticlesController extends MainController
 
     public function deleteMethod()
     {
-        $this->session->setFlash('Le chapitre à été supprimé', 'success');
+        $comments = new CommentsController();
+        $comments->deleteMethod();
+
         ModelFactory::getModel('Billets')->deleteData($this->get->getVar('id'));
+        $this->session->setFlash('Le chapitre a été supprimé', 'success');
+
         $this->redirect('articles');
     }
 }
