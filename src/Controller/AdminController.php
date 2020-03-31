@@ -25,7 +25,6 @@ class AdminController extends MainController
                 ]);
             }
         }
-        $this->session->flash();
         return $this->twig->render('consub.twig');
     }
 }

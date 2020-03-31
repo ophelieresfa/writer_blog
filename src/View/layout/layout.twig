@@ -17,6 +17,9 @@
 
 <header>
     {{ include('layout/navbar.twig') }}
+    {% if (hasFlash()) %}
+        <p class="flash flash-{{ typeFlash() }} al-cent">{{ messageFlash() }}</p>
+    {% endif %}
     <h1 class="white">{{ block('title') }}</h1>
 </header>
 

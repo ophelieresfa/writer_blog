@@ -37,4 +37,23 @@ abstract class MainController extends GlobalController
 
         exit;
     }
+
+    public function hasFlash() {
+        return empty($_SESSION['flash']) == false;
+    }
+
+    public function typeFlash()
+    {
+        if (isset($_SESSION['flash'])) {
+            echo $_SESSION['flash']['type'];
+        }
+    }
+
+    public function messageFlash()
+    {
+        if (isset($_SESSION['flash'])) {
+            echo $_SESSION['flash']['message'];
+            unset($_SESSION['flash']);
+        }
+    }
 }

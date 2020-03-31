@@ -14,7 +14,6 @@ class ContactController extends MainController
 
     public function startMethod()
     {
-        $this->session->flash();
         return $this->twig->render('contact.twig');
     }
 
