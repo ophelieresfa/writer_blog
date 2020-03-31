@@ -18,8 +18,6 @@ class ArticlesController extends MainController
         $admin = $this->session->userVar('admin') == 1;
         $posts = ModelFactory::getModel('Billets')->listData();
 
-        $this->session->flash();
-
         return $this->twig->render('chapters.twig', [
             'posts' => $posts,
             'session' => $session,
@@ -49,8 +47,6 @@ class ArticlesController extends MainController
         $comments = ModelFactory::getModel('Commentaires')->listData($this->get->getVar
         ('id'), 'id_billet');
         $post = ModelFactory::getModel('Billets')->readData($this->get->getVar('id'));
-
-        $this->session->flash();
 
         return $this->twig->render('allChapters.twig', [
             'post' => $post,

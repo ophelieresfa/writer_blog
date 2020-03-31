@@ -17,7 +17,6 @@ class UserController extends MainController
         if (!empty($this->session->isLogged())) {
             return $this->twig->render('admin.twig');
         }
-        $this->session->flash();
         return $this->twig->render('consub.twig');
     }
 
