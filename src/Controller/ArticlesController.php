@@ -79,8 +79,11 @@ class ArticlesController extends MainController
 
     public function deleteMethod()
     {
-        $comments = new CommentsController();
-        $comments->deleteMethod();
+        $comment = ModelFactory::getModel('Commentaires')->listData($this->get->getVar('id'), 'id_billet');
+
+        if (!empty($comment)) {
+            ModelFactory::getModel('Commentaires')->deleteData($this->get->getVar('id'), 'id_billet');
+        }
 
         ModelFactory::getModel('Billets')->deleteData($this->get->getVar('id'));
         $this->session->setFlash('Le chapitre a été supprimé', 'success');
