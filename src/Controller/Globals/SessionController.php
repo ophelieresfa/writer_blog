@@ -77,14 +77,21 @@ class SessionController
         );
     }
 
-    public function flash()
+    public function hasFlash() {
+        return empty($_SESSION['flash']) == false;
+    }
+
+    public function typeFlash()
     {
         if (isset($_SESSION['flash'])) {
-            ?>
-            <div class="flash flash-<?php echo $_SESSION['flash']['type']; ?>">
-                <?php echo $_SESSION['flash']['message']; ?>
-            </div>
-            <?php
+            echo $_SESSION['flash']['type'];
+        }
+    }
+
+    public function messageFlash()
+    {
+        if (isset($_SESSION['flash'])) {
+            echo $_SESSION['flash']['message'];
             unset($_SESSION['flash']);
         }
     }
