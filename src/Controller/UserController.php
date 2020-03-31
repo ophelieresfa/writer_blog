@@ -67,4 +67,10 @@ class UserController extends MainController
         }
         return $this->twig->render('subscribe.twig');
     }
+
+    public function deleteMethod()
+    {
+        ModelFactory::getModel('Utilisateurs')->deleteData($this->get->getVar('id_user'));
+
+        return $this->twig->render('home.twig');    }
 }
