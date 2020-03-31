@@ -28,14 +28,35 @@ class Extention extends AbstractExtension
     public function getFunctions()
     {
         return array(
-            new TwigFunction('url', array($this, 'url'))
+            new TwigFunction('url', array($this, 'url')),
+            new TwigFunction('hasFlash', array($this, 'hasFlash')),
+            new TwigFunction('typeFlash', array($this, 'typeFlash')),
+            new TwigFunction('messageFlash', array($this, 'messageFlash'))
         );
-
     }
 
     public function url(string $page, array $params = [])
     {
         $params['action'] = $page;
         return 'index.php?' . http_build_query($params);
+    }
+
+    public function hasFlash() {
+        return empty($_SESSION['flash']) == false;
+    }
+
+    public function typeFlash()
+    {
+        if (isset($_SESSION['flash'])) {
+            echo $_SESSION['flash']['type'];
+        }
+    }
+
+    public function messageFlash()
+    {
+        if (isset($_SESSION['flash'])) {
+            echo $_SESSION['flash']['message'];
+            unset($_SESSION['flash']);
+        }
     }
 }
