@@ -283,9 +283,14 @@ form a {
 
 .link-connect,
 .link-disconned,
+.link-remove,
 .link-sub {
     padding: 1rem;
     font-size: 1rem;
+}
+
+.link-remove {
+    background-color: #760500;
 }
 
 .or {
