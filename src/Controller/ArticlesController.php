@@ -68,13 +68,12 @@ class ArticlesController extends MainController
             $this->session->setFlash('Le chapitre a été modifié avec succès', 'success');
 
             $this->redirect('articles!read', ['id' => $this->get->getVar('id')]);
-
         }
 
         $post = ModelFactory::getModel('Billets')->readData($this->get->getVar('id'));
         return $this->twig->render('updateArticle.twig', [
-        'post' => $post
-    ]);
+            'post' => $post
+        ]);
     }
 
     public function deleteMethod()
