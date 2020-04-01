@@ -52,16 +52,17 @@
                 </div>
         {% endif %}
 
-
-        <section class="add-comment">
-            <h2>Ajouter un commentaire</h2>
-            <form  method="post" action="{{ url("comments!create", {'id': post.id}) }}">
-                <input name="pseudo" type="text" placeholder="pseudo" required>
-                <textarea name="content" rows="5" placeholder="Votre commentaire" required></textarea>
-                <input name="date" type="hidden" value="{{ date()|date('Y-m-d H:i:s') }}">
-                <input type="reset" value="Effacer">
-                <input type="submit" value="Ajouter">
-            </form>
-        </section>
+        {% if session == true %}
+            <section class="add-comment">
+                <h2>Ajouter un commentaire</h2>
+                <form  method="post" action="{{ url("comments!create", {'id': post.id}) }}">
+                    <input name="pseudo" type="text" placeholder="pseudo" required>
+                    <textarea name="content" rows="5" placeholder="Votre commentaire" required></textarea>
+                    <input name="date" type="hidden" value="{{ date()|date('Y-m-d H:i:s') }}">
+                    <input type="reset" value="Effacer">
+                    <input type="submit" value="Ajouter">
+                </form>
+            </section>
+        {% endif %}
     </main>
 {% endblock %}
