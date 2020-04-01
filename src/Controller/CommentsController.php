@@ -18,7 +18,7 @@ class CommentsController extends MainController
             $data['contenu'] = $this->post->postVar('content');
             $data['date_commentaire'] = $this->post->postVar('date');
             $data['id_billet'] = $this->get->getVar('id');
-            $data['id_utilisateur'] = 0;
+            $data['id_utilisateur'] = $this->session->userVar('id');
 
             $this->session->setFlash('Le commentaire a été ajouté avec succès', 'success');
 
