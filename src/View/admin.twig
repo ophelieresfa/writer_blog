@@ -13,13 +13,13 @@
 
         <section class="administration black">
             <h2>Vous pouvez dès à présent faire des modifications.</h2>
-            <a href="{{ url('user!logout') }}">
-                <button class="link-disconned" type="button">Se déconnecter</button>
-            </a>
             <a href="{{ url("user!delete", {'id_user': id_user}) }}">
                 <button class="link-remove white" type="button">
                     <i class="fas fa-exclamation-triangle"></i> Supprimer mon compte utilisateur <i class="fas fa-exclamation-triangle"></i>
                 </button>
+            </a>
+            <a href="{{ url('user!logout') }}">
+                <button class="link-disconned" type="button">Se déconnecter</button>
             </a>
         </section>
 

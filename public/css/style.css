@@ -309,6 +309,17 @@ form a {
     font-size: 1.2rem;
 }
 
+.administration a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.administration .link-disconned {
+    width: 12rem;
+    margin: 2rem auto;
+}
+
 /**/
 /* Modération des commentaires*/
 /**/

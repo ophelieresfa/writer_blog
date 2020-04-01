@@ -44,7 +44,7 @@ class UserController extends MainController
     public function logoutMethod()
     {
         $this->session->destroySession();
-        $this->redirect('home');
+        $this->redirect('user');
     }
 
     public function createMethod()
@@ -77,8 +77,7 @@ class UserController extends MainController
         }
 
         ModelFactory::getModel('Utilisateurs')->deleteData($this->get->getVar('id_user'));
-        $this->session->destroySession();
-        $this->session->setFlash('Le compte a été supprimé', 'success');
-        $this->redirect('home');
+
+        $this->redirect('user!logout');
     }
 }
