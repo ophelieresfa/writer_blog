@@ -17,10 +17,12 @@ class AdminController extends MainController
         if ($this->session->isLogged()) {
             if ($this->session->userVar('admin') !== NULL) {
                 $pseudo = $this->session->userVar('pseudo');
+                $id_user = $this->session->userVar('id');
                 $comments = ModelFactory::getModel('Commentaires')->listData();
 
                 return $this->twig->render('admin.twig', [
                     'pseudo' => $pseudo,
+                    'id_user' => $id_user,
                     'comments' => $comments
                 ]);
             }
