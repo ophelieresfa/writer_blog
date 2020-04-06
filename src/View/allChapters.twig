@@ -34,7 +34,7 @@
                         <p>le <span>{{ comment.date_commentaire }} :</span></p>
 
                         <div class="btn-comments">
-                            <a class="white btn-signal" href="{{ url("comments!report", {'id_comment': comment.id}, {'id_billet': comment.id_billet}) }}">Signaler le commentaire</a>
+                            <a class="white btn-signal" href="{{ url("comments!report", {'id_comment': comment.id}) }}">Signaler le commentaire</a>
 
                             {% if session == true %}
                                 {% if admin == 1 %}

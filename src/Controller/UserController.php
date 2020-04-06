@@ -77,7 +77,9 @@ class UserController extends MainController
         }
 
         ModelFactory::getModel('Utilisateurs')->deleteData($this->get->getVar('id_user'));
+        $_SESSION['user'] = [];
+        $this->session->setFlash('Votre compte a été supprimé', 'error');
 
-        $this->redirect('user!logout');
+        $this->redirect('home');
     }
 }

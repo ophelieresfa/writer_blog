@@ -20,9 +20,8 @@ class CommentsController extends MainController
             $data['id_billet'] = $this->get->getVar('id');
             $data['id_utilisateur'] = $this->session->userVar('id');
 
-            $this->session->setFlash('Le commentaire a été ajouté avec succès', 'success');
-
             ModelFactory::getModel('Commentaires')->createData($data);
+            $this->session->setFlash('Le commentaire a été ajouté avec succès', 'success');
             $this->redirect('articles!read', ['id' => $this->get->getVar('id')]);
         }
         return $this->twig->render('allChapters.twig');
@@ -40,9 +39,8 @@ class CommentsController extends MainController
     {
         $data['report'] = 1;
 
-        $this->session->setFlash('Le commentaire a été signalé', 'success');
-
         ModelFactory::getModel('Commentaires')->updateData($this->get->getVar('id_comment'), $data);
+        $this->session->setFlash('Le commentaire a été signalé', 'success');
 
         $this->redirect('articles');
     }
