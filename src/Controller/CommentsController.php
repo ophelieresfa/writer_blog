@@ -20,9 +20,8 @@ class CommentsController extends MainController
             $data['id_billet'] = $this->get->getVar('id');
             $data['id_utilisateur'] = $this->session->userVar('id');
 
-            $this->session->setFlash('Le commentaire a été ajouté avec succès', 'success');
-
             ModelFactory::getModel('Commentaires')->createData($data);
+            $this->session->setFlash('Le commentaire a été ajouté avec succès', 'success');
             $this->redirect('articles!read', ['id' => $this->get->getVar('id')]);
         }
         return $this->twig->render('allChapters.twig');
@@ -31,20 +30,27 @@ class CommentsController extends MainController
     public function deleteMethod()
     {
 
-        ModelFactory::getModel('Commentaires')->deleteData($this->get->getVar('id_comment'));
+        $id_comment = $this->get->getVar('id_comment');
+        $comment    = ModelFactory::getModel('Commentaires')->readData($id_comment);
+        $id_article = $comment['id_billet'];
+
+        ModelFactory::getModel('Commentaires')->deleteData($id_comment, $data);
         $this->session->setFlash('Le commentaire a été supprimé', 'success');
-        $this->redirect('articles');
+
+        $this->redirect('articles!read', ['id' => $id_article]);
     }
 
     public function reportMethod()
     {
-        $data['report'] = 1;
+        $id_comment = $this->get->getVar('id_comment');
+        $comment    = ModelFactory::getModel('Commentaires')->readData($id_comment);
+        $id_article = $comment['id_billet'];
 
+        $data['report'] = 1;
+        ModelFactory::getModel('Commentaires')->updateData($id_comment, $data);
         $this->session->setFlash('Le commentaire a été signalé', 'success');
 
-        ModelFactory::getModel('Commentaires')->updateData($this->get->getVar('id_comment'), $data);
-
-        $this->redirect('articles');
+        $this->redirect('articles!read', ['id' => $id_article]);
     }
 
     public function notreportMethod()
