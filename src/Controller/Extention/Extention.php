@@ -42,20 +42,20 @@ class Extention extends AbstractExtension
     }
 
     public function hasFlash() {
-        return empty($_SESSION['flash']) == false;
+        return empty($this->session['flash']) == false;
     }
 
     public function typeFlash()
     {
-        if (isset($_SESSION['flash'])) {
-            echo $_SESSION['flash']['type'];
+        if (isset($this->session['flash'])) {
+            echo $this->session['flash']['type'];
         }
     }
 
     public function messageFlash()
     {
-        if (isset($_SESSION['flash'])) {
-            echo $_SESSION['flash']['message'];
+        if (isset($this->session['flash'])) {
+            echo $this->session['flash']['message'];
             unset($_SESSION['flash']);
         }
     }
