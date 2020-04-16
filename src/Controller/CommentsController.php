@@ -20,8 +20,9 @@ class CommentsController extends MainController
             $data['id_billet'] = $this->get->getVar('id');
             $data['id_utilisateur'] = $this->session->userVar('id');
 
-            ModelFactory::getModel('Commentaires')->createData($data);
             $this->session->setFlash('Le commentaire a été ajouté avec succès', 'success');
+
+            ModelFactory::getModel('Commentaires')->createData($data);
             $this->redirect('articles!read', ['id' => $this->get->getVar('id')]);
         }
         return $this->twig->render('allChapters.twig');
@@ -29,28 +30,39 @@ class CommentsController extends MainController
 
     public function deleteMethod()
     {
+        $id_comment = $this->get->getVar('id_comment');
+        $comment    = ModelFactory::getModel('Commentaires')->readData($id_comment);
+        $id_article = $comment['id_billet'];
 
-        ModelFactory::getModel('Commentaires')->deleteData($this->get->getVar('id_comment'));
+        ModelFactory::getModel('Commentaires')->deleteData($id_comment, $data);
         $this->session->setFlash('Le commentaire a été supprimé', 'success');
-        $this->redirect('articles');
+
+        $this->redirect('articles!read', ['id' => $id_article]);
     }
 
     public function reportMethod()
     {
+        $id_comment = $this->get->getVar('id_comment');
+        $comment    = ModelFactory::getModel('Commentaires')->readData($id_comment);
+        $id_article = $comment['id_billet'];
         $data['report'] = 1;
 
-        ModelFactory::getModel('Commentaires')->updateData($this->get->getVar('id_comment'), $data);
+        ModelFactory::getModel('Commentaires')->updateData($id_comment, $data);
         $this->session->setFlash('Le commentaire a été signalé', 'success');
 
-        $this->redirect('articles');
+        $this->redirect('articles!read', ['id' => $id_article]);
     }
 
     public function notreportMethod()
     {
+        $id_comment = $this->get->getVar('id_comment');
+        $comment    = ModelFactory::getModel('Commentaires')->readData($id_comment);
+        $id_article = $comment['id_billet'];
         $data['report'] = 0;
 
         ModelFactory::getModel('Commentaires')->updateData($this->get->getVar('id_comment'), $data);
+        $this->session->setFlash('Le commentaire a été autorisé', 'success');
 
-        $this->redirect('admin');
+        $this->redirect('articles!read', ['id' => $id_article]);
     }
 }
