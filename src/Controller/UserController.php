@@ -59,8 +59,8 @@ class UserController extends MainController
 
             if ($this->post->postVar('email') !== $user['email']) {
                 ModelFactory::getModel('Utilisateurs')->createData($data);
-                $this->session->setFlash('Votre inscription a été enregistrée', 'success');
-                $this->redirect('home');
+                $this->session->setFlash('Votre inscription a été enregistrée, vous pouvez dès à présent vous connecter', 'success');
+                $this->redirect('user!login');
             }
             $this->session->setFlash('Votre inscription n\'a pas été enregistrée car vous avez déjà un compte avec cette adresse mail', 'error');
             $this->redirect('admin');
