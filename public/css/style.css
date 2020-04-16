@@ -18,18 +18,18 @@ nav {
     background: linear-gradient(90deg, black, #3b3b3b) ;
 }
 
-nav ul li {
+nav li {
     list-style-type: none;
     text-align: center;
     padding: .2rem;
 }
 
-nav ul li a:hover {
+nav a:hover {
     color: #2c9187;
     text-decoration: underline;
 }
 
-nav ul li a {
+nav a {
     text-decoration: none;
 }
 
@@ -132,7 +132,7 @@ ul {
     margin: 3rem;
 }
 
-.more-chapters a button {
+.more-chapters button {
     font-family: 'Neucha', cursive, 'sans-serif';
     font-size: .9rem;
     margin: 3rem auto;
@@ -140,7 +140,7 @@ ul {
     width: 40%;
 }
 
-.more-chapters a button:hover {
+.more-chapters button:hover {
     color: #2c9187;
     cursor: pointer;
 }
@@ -315,7 +315,7 @@ form a {
     text-decoration: none;
 }
 
-.administration .link-disconned {
+.link-disconned {
     width: 12rem;
     margin: 2rem auto;
 }
