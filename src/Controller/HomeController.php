@@ -12,6 +12,12 @@ use App\Model\Factory\ModelFactory;
 class HomeController extends MainController
 {
 
+    /**
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
     public function startMethod()
     {
         $lastBillet = ModelFactory::getModel('Billets')->listData();

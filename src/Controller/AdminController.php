@@ -12,12 +12,18 @@ use App\Model\Factory\ModelFactory;
 class AdminController extends MainController
 {
 
+    /**
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
     public function startMethod()
     {
-        if ($this->session->isLogged()) {
-            if ($this->session->userVar('admin') !== NULL) {
-                $pseudo = $this->session->userVar('pseudo');
-                $id_user = $this->session->userVar('id');
+        if ($this->session->isLogged()){
+            if ($this->session->userVar('admin') !== NULL){
+                $pseudo   = $this->session->userVar('pseudo');
+                $id_user  = $this->session->userVar('id');
                 $comments = ModelFactory::getModel('Commentaires')->listData();
 
                 return $this->twig->render('admin.twig', [
@@ -27,6 +33,7 @@ class AdminController extends MainController
                 ]);
             }
         }
+
         return $this->twig->render('consub.twig');
     }
 }

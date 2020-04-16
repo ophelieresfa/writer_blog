@@ -13,8 +13,14 @@ use Twig\Loader\FilesystemLoader;
 
 abstract class MainController extends GlobalController
 {
+    /**
+     * @var Environment|null
+     */
     protected $twig = null;
 
+    /**
+     * MainController constructor.
+     */
     public function __construct()
     {
         parent::__construct();
@@ -23,6 +29,11 @@ abstract class MainController extends GlobalController
         $this->twig->addGlobal('session', $_SESSION);
     }
 
+    /**
+     * @param string $page
+     * @param array $params
+     * @return string
+     */
     public function url(string $page, array $params = [])
     {
         $params['action'] = $page;
@@ -30,6 +41,10 @@ abstract class MainController extends GlobalController
         return 'index.php?' . http_build_query($params);
     }
 
+    /**
+     * @param string $page
+     * @param array $params
+     */
     public function redirect(string $page, array $params = [])
     {
         $params['action'] = $page;

@@ -13,14 +13,26 @@ use App\Controller\Globals\SessionController;
 
 abstract class GlobalController
 {
-    protected $get = null;
-    protected $post = null;
+    /**
+     * @var GetController|null
+     */
+    protected $get     = null;
+    /**
+     * @var PostController|null
+     */
+    protected $post    = null;
+    /**
+     * @var SessionController|null
+     */
     protected $session = null;
 
+    /**
+     * GlobalController constructor.
+     */
     public function __construct()
     {
-        $this->get = new GetController();
-        $this->post = new PostController();
+        $this->get     = new GetController();
+        $this->post    = new PostController();
         $this->session = new SessionController();
     }
 }
