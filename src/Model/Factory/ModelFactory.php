@@ -11,11 +11,18 @@ use App\Model\PdoDb;
 
 class ModelFactory
 {
+    /**
+     * @var array
+     */
     private static $models = [];
 
+    /**
+     * @param string $table
+     * @return mixed
+     */
     public static function getModel(string $table)
     {
-        if (array_key_exists($table, self::$models)) {
+        if (array_key_exists($table, self::$models)){
             return self::$models[$table];
         }
 

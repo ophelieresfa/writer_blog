@@ -9,28 +9,47 @@ namespace App\Model;
 
 abstract class MainModel
 {
+    /**
+     * @var PdoDb|null
+     */
     protected $database = null;
-    protected $table = null;
+    /**
+     * @var string|null
+     */
+    protected $table    = null;
 
+    /**
+     * MainModel constructor.
+     * @param PdoDb $database
+     */
     public function __construct(PdoDb $database)
     {
         $this->database = $database;
-        $model = explode('\\', get_class($this));
-        $this->table = ucfirst(str_replace('Model', '', array_pop($model)));
+        $model          = explode('\\', get_class($this));
+        $this->table    = ucfirst(str_replace('Model', '', array_pop($model)));
     }
 
+    /**
+     * @param string|null $value
+     * @param string|null $key
+     * @return array
+     */
     public function listData(string $value = null, string $key = null)
     {
-        if (isset($key)) {
+        if (isset($key)){
             $query = 'SELECT * FROM ' . $this->table . ' WHERE ' . $key . ' = ?';
 
             return $this->database->getAllData($query, [$value]);
         }
+
         $query = 'SELECT * FROM ' . $this->table;
 
         return $this->database->getAllData($query);
     }
 
+    /**
+     * @param array $data
+     */
     public function createData(array $data)
     {
         $keys   = implode(', ', array_keys($data));
@@ -40,6 +59,11 @@ abstract class MainModel
         $this->database->setData($query);
     }
 
+    /**
+     * @param string $value
+     * @param string|null $key
+     * @return mixed
+     */
     public function readData(string $value, string $key = null)
     {
         if (isset($key)) {
@@ -51,6 +75,11 @@ abstract class MainModel
         return $this->database->getData($query, [$value]);
     }
 
+    /**
+     * @param string $value
+     * @param array $data
+     * @param string|null $key
+     */
     public function updateData(string $value, array $data, string $key = null)
     {
         $set = null;
@@ -70,6 +99,10 @@ abstract class MainModel
         $this->database->setData($query, [$value]);
     }
 
+    /**
+     * @param string $value
+     * @param string|null $key
+     */
     public function deleteData(string $value, string $key = null)
     {
         if (isset($key)) {
