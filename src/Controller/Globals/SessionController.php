@@ -126,7 +126,7 @@ class SessionController
     public function typeFlash()
     {
         if (isset($this->session['flash'])){
-            echo $this->session['flash']['type'];
+            return $this->session['flash']['type'];
         }
     }
 
@@ -136,7 +136,7 @@ class SessionController
     public function messageFlash()
     {
         if (isset($this->session['flash'])){
-            echo $this->session['flash']['message'];
+            echo filter_var($this->session['flash']['message']);
             unset($_SESSION['flash']);
         }
     }
