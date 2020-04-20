@@ -44,7 +44,7 @@ class CommentsController extends MainController
         $comment    = ModelFactory::getModel('Commentaires')->readData($id_comment);
         $id_article = $comment['id_billet'];
 
-        ModelFactory::getModel('Commentaires')->deleteData($id_comment, $data);
+        ModelFactory::getModel('Commentaires')->deleteData($id_comment);
         $this->session->setFlash('Le commentaire a été supprimé', 'success');
 
         $this->redirect('articles!read', ['id' => $id_article]);
