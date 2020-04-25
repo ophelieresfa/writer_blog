@@ -64,9 +64,6 @@ class Extention extends AbstractExtension
         return empty($this->session['flash']) == false;
     }
 
-    /**
-     *
-     */
     public function typeFlash()
     {
         if (isset($this->session['flash'])){
@@ -74,9 +71,6 @@ class Extention extends AbstractExtension
         }
     }
 
-    /**
-     *
-     */
     public function messageFlash()
     {
         if (isset($this->session['flash'])){

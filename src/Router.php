@@ -10,17 +10,8 @@ namespace App;
 class Router
 {
 
-    /**
-     *
-     */
     const PATH_CONTROLLER   = 'App\Controller\\';
-    /**
-     *
-     */
     const HOME_CONTROLLER   = 'HomeController';
-    /**
-     *
-     */
     const METHOD_CONTROLLER = 'startMethod';
 
     /**
@@ -42,9 +33,6 @@ class Router
         $this->setMethod();
     }
 
-    /**
-     *
-     */
     public function parseUrl()
     {
         $action = filter_input(INPUT_GET, 'action');
@@ -58,9 +46,6 @@ class Router
         $this->method     = count($action) == 1 ? 'start' : $action[1];
     }
 
-    /**
-     *
-     */
     public function setController()
     {
         $this->controller = ucfirst(strtolower($this->controller)) . 'Controller';
@@ -71,9 +56,6 @@ class Router
         }
     }
 
-    /**
-     *
-     */
     public function setMethod()
     {
         $this->method = strtolower($this->method) . 'Method';
@@ -83,9 +65,6 @@ class Router
         }
     }
 
-    /**
-     *
-     */
     public function run()
     {
         $this->controller = new $this->controller();

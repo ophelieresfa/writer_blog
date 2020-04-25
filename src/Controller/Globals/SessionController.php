@@ -45,9 +45,6 @@ class SessionController
         ];
     }
 
-    /**
-     *
-     */
     public function destroySession()
     {
         $_SESSION['user'] = [];
@@ -120,9 +117,6 @@ class SessionController
         return empty($this->session['flash']) == false;
     }
 
-    /**
-     *
-     */
     public function typeFlash()
     {
         if (isset($this->session['flash'])){
@@ -130,9 +124,6 @@ class SessionController
         }
     }
 
-    /**
-     *
-     */
     public function messageFlash()
     {
         if (isset($this->session['flash'])){

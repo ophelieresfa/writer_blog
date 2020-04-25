@@ -95,9 +95,6 @@ class UserController extends MainController
         return $this->twig->render('subscribe.twig');
     }
 
-    /**
-     *
-     */
     public function deleteMethod()
     {
         $comment = ModelFactory::getModel('Commentaires')->listData($this->get->getVar('id_user'), 'id_utilisateur');

@@ -3,6 +3,9 @@
 namespace App\Controller;
 
 use App\Model\Factory\ModelFactory;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
 
 /**
  * Class CommentsController
@@ -11,11 +14,22 @@ use App\Model\Factory\ModelFactory;
 
 class CommentsController extends MainController
 {
+
+    private function idArticle()
+    {
+        $id_comment     = $this->get->getVar('id_comment');
+        $comment        = ModelFactory::getModel('Commentaires')->readData($id_comment);
+        $id_article     = $comment['id_billet'];
+
+        return $id_article;
+        return
+    }
+
     /**
      * @return string
-     * @throws \Twig\Error\LoaderError
-     * @throws \Twig\Error\RuntimeError
-     * @throws \Twig\Error\SyntaxError
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
      */
     public function createMethod()
     {
@@ -35,9 +49,6 @@ class CommentsController extends MainController
         return $this->twig->render('allChapters.twig');
     }
 
-    /**
-     *
-     */
     public function deleteMethod()
     {
         $id_comment = $this->get->getVar('id_comment');
@@ -50,9 +61,6 @@ class CommentsController extends MainController
         $this->redirect('articles!read', ['id' => $id_article]);
     }
 
-    /**
-     *
-     */
     public function reportMethod()
     {
         $id_comment     = $this->get->getVar('id_comment');
@@ -66,9 +74,6 @@ class CommentsController extends MainController
         $this->redirect('articles!read', ['id' => $id_article]);
     }
 
-    /**
-     *
-     */
     public function notreportMethod()
     {
         $id_comment     = $this->get->getVar('id_comment');
@@ -76,7 +81,7 @@ class CommentsController extends MainController
         $id_article     = $comment['id_billet'];
         $data['report'] = 0;
 
-        ModelFactory::getModel('Commentaires')->updateData($this->get->getVar('id_comment'), $data);
+        ModelFactory::getModel('Commentaires')->updateData($id_comment, $data);
         $this->session->setFlash('Le commentaire a été autorisé', 'success');
 
         $this->redirect('articles!read', ['id' => $id_article]);

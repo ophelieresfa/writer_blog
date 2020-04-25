@@ -100,9 +100,6 @@ class ArticlesController extends MainController
         ]);
     }
 
-    /**
-     *
-     */
     public function deleteMethod()
     {
         $comment = ModelFactory::getModel('Commentaires')->listData($this->get->getVar('id'), 'id_billet');
