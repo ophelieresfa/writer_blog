@@ -22,7 +22,6 @@ class CommentsController extends MainController
         $id_article     = $comment['id_billet'];
 
         return $id_article;
-        return
     }
 
     /**
