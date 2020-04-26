@@ -26,7 +26,7 @@
         <section class="all-comments">
                 {% for comment in comments %}
                     {% if comment.report == 1 %}
-
+                    {% if admin == 1 %}
                         <h2>Ce commentaire à été signalé :</h2>
 
                         <div class="comments bck-white">
@@ -36,7 +36,7 @@
                             <a class="white" href="{{ url("comments!notreport", {'id_comment': comment.id}) }}">Autorisé le commentaire</a>
                             <a class="white" href="{{ url("comments!delete", {'id_comment': comment.id}) }}">Supprimer le commentaire</a>
                         </div>
-
+                    {% endif %}
                     {% endif %}
                 {% endfor %}
         </section>
