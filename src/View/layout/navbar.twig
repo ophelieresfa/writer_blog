@@ -10,7 +10,17 @@
             <a class="white" href="{{ url('contact') }}">Contact</a>
         </li>
         <li>
-            <a class="white" href="{{ url('admin') }}">Connexion / Inscription</a>
+            {% if session == true %}
+                <a class="white" href="{{ url('admin') }}">Mon compte</a>
+            {% endif %}
+        </li>
+        <li>
+            {% if session == false %}
+                <a class="white" href="{{ url('admin') }}">Connexion / Inscription</a>
+            {% endif %}
+            {% if session == true %}
+                <a class="white" href="{{ url('user!logout') }}">Déconnection</a>
+            {% endif %}
         </li>
     </ul>
 </nav>
