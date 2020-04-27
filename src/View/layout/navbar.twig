@@ -10,15 +10,16 @@
             <a class="white" href="{{ url('contact') }}">Contact</a>
         </li>
         <li>
-            {% if session == true %}
+            {% if admin == 1 %}
                 <a class="white" href="{{ url('admin') }}">Mon compte</a>
             {% endif %}
         </li>
         <li>
-            {% if session == false %}
+            {% if admin == false %}
                 <a class="white" href="{{ url('admin') }}">Connexion / Inscription</a>
             {% endif %}
-            {% if session == true %}
+
+            {% if admin == 1 %}
                 <a class="white" href="{{ url('user!logout') }}">Déconnection</a>
             {% endif %}
         </li>
