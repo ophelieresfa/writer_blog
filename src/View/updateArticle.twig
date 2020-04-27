@@ -13,7 +13,7 @@
 
         <form  method="post" action="{{ url("articles!update", {'id': post.id}) }}" >
             <input name="titre" type="text" value="{{post.titre}}">
-            <textarea name="contenu" rows="5">{{post.contenu}}</textarea>
+            <textarea id="textarea" name="contenu" rows="5">{{post.contenu}}</textarea>
             <input name="date" type="hidden" value="{{ date()|date('Y-m-d H:i:s') }}">
             <input type="reset" value="Effacer">
             <input type="submit" value="Modifier">

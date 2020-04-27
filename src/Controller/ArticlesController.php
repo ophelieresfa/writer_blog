@@ -41,7 +41,7 @@ class ArticlesController extends MainController
     {
         if (!empty($this->post->postArray())){
             $data['titre']         = $this->post->postVar('titre');
-            $data['contenu']       = $this->post->postVar('contenu');
+            $data['contenu']       = htmlentities($this->post->postVar('contenu'));
             $data['date_creation'] = $this->post->postVar('date');
 
             ModelFactory::getModel('Billets')->createData($data);
@@ -66,9 +66,14 @@ class ArticlesController extends MainController
         $comments = ModelFactory::getModel('Commentaires')->listData($this->get->getVar
         ('id'), 'id_billet');
         $post     = ModelFactory::getModel('Billets')->readData($this->get->getVar('id'));
+        $content  = strip_tags(html_entity_decode($post["contenu"]));
+
+        var_dump($content);
+
 
         return $this->twig->render('allChapters.twig', [
             'post' => $post,
+            'content' => $content,
             'comments' => $comments,
             'session' =>$session,
             'admin' => $admin
