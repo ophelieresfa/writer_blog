@@ -15,15 +15,6 @@ use Twig\Error\SyntaxError;
 class CommentsController extends MainController
 {
 
-    private function idArticle()
-    {
-        $id_comment     = $this->get->getVar('id_comment');
-        $comment        = ModelFactory::getModel('Commentaires')->readData($id_comment);
-        $id_article     = $comment['id_billet'];
-
-        return $id_article;
-    }
-
     /**
      * @return string
      * @throws LoaderError
