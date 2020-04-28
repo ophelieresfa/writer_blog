@@ -13,8 +13,9 @@
 
         <section class="post">
             <h2>{{ post.titre }}</h2>
-            <p>{{ content }}</p>
-
+            {% autoescape %}
+            <p>{{ post.contenu|raw }}</p>
+            {% endautoescape %}
             <div>
                 {% if session == true %}
                     {% if admin == 1 %}

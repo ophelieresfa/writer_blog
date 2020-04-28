@@ -21,7 +21,7 @@
         {% for post in posts [start:length] %}
             <section class="full-billet bck-white black">
                 <h2>{{ post.titre }}</h2>
-                <p>{{ post.contenu[:700] }} ...</p>
+                <p>{{ post.contenu[:700]|raw }} ...</p>
                 <a class="acces-chap white bck-black" href="{{ url('articles!read', {'id': post.id}, {'id': commentaire.id_billet})}}">Accéder au chapitre</a>
             </section>
         {% endfor %}
