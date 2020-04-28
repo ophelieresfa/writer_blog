@@ -17,7 +17,7 @@
             {% for billet in lastBillet [start:length] %}
                 {% if billet.id == 1 %}
                     <h2>{{ billet.titre }}</h2>
-                    <p>{{ billet.contenu[:780]}} ...</p>
+                    <p>{{ billet.contenu[:780]|raw}} ...</p>
                 {% endif %}
             {% endfor %}
         </section>
